@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 9.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="1.36">
+ <Targets>
+  <Target Name="H:\Project\NewWork\Projects08\ORM\bin\Debug\ORM.dll">
+   <Modules>
+    <Module Name="orm.dll">
+     <Namespaces>
+      <Namespace Name="ORM">
+       <Types>
+        <Type Name="Map" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Convert`2(!!0)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="344">在方法 'Map.Convert&lt;S, T&gt;(S)' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Convert`2(!!0,System.String[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="332">在方法 'Map.Convert&lt;S, T&gt;(S, string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Convert`2(!!0[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="371">在方法 'Map.Convert&lt;S, T&gt;(S[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Convert`2(!!0[],System.String[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="359">在方法 'Map.Convert&lt;S, T&gt;(S[], string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Convert`2(System.Collections.Generic.IEnumerable`1&lt;!!0&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="423">在方法 'Map.Convert&lt;S, T&gt;(IEnumerable&lt;S&gt;)' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Convert`2(System.Collections.Generic.IEnumerable`1&lt;!!0&gt;,System.String[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="411">在方法 'Map.Convert&lt;S, T&gt;(IEnumerable&lt;S&gt;, string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Copy`2(!!0,!!1)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="317">在方法 'Map.Copy&lt;S, T&gt;(S, T)' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Copy`2(!!0,!!1,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="294">在方法 'Map.Copy&lt;S, T&gt;(S, T, string)' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Copy`2(!!0,!!1,System.String[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="306">在方法 'Map.Copy&lt;S, T&gt;(S, T, params string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Duplicator`2()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="280">在方法 'Map.Duplicator&lt;S, T&gt;()' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Duplicator`2(System.String[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="270">在方法 'Map.Duplicator&lt;S, T&gt;(string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Mapping" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Convert`2(!!0)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="145">在方法 'Mapping.Convert&lt;S, T&gt;(S)' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#convert`2(!!0,System.String[])" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Mapping.cs" Line="127">在方法 'Mapping.convert&lt;S, T&gt;(S, string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Convert`2(!!0,System.String[])" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="133">在方法 'Mapping.Convert&lt;S, T&gt;(S, string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Convert`2(!!0[])" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="172">在方法 'Mapping.Convert&lt;S, T&gt;(S[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#convert`2(!!0[],System.String[])" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Mapping.cs" Line="142">在方法 'Mapping.convert&lt;S, T&gt;(S[], string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Convert`2(!!0[],System.String[])" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="160">在方法 'Mapping.Convert&lt;S, T&gt;(S[], string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Convert`2(System.Collections.Generic.IEnumerable`1&lt;!!0&gt;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="224">在方法 'Mapping.Convert&lt;S, T&gt;(IEnumerable&lt;S&gt;)' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#convert`2(System.Collections.Generic.IEnumerable`1&lt;!!0&gt;,System.String[])" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning">在方法 'Mapping.convert&lt;S, T&gt;(IEnumerable&lt;S&gt;, string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Convert`2(System.Collections.Generic.IEnumerable`1&lt;!!0&gt;,System.String[])" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="212">在方法 'Mapping.Convert&lt;S, T&gt;(IEnumerable&lt;S&gt;, string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Copy`2(!!0,!!1)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="118">在方法 'Mapping.Copy&lt;S, T&gt;(S, T)' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#copy`2(!!0,!!1,System.String)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Mapping.cs" Line="199">在方法 'Mapping.copy&lt;S, T&gt;(S, T, string)' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Copy`2(!!0,!!1,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="95">在方法 'Mapping.Copy&lt;S, T&gt;(S, T, string)' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#copy`2(!!0,!!1,System.String[])" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Mapping.cs" Line="217">在方法 'Mapping.copy&lt;S, T&gt;(S, T, params string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Copy`2(!!0,!!1,System.String[])" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="107">在方法 'Mapping.Copy&lt;S, T&gt;(S, T, params string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Duplicator`2()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="81">在方法 'Mapping.Duplicator&lt;S, T&gt;()' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#duplicator`2(System.String[])" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Mapping.cs" Line="91">在方法 'Mapping.duplicator&lt;S, T&gt;(string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Duplicator`2(System.String[])" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="S" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2013-10-25 07:10:54Z" FixCategory="NonBreaking">
+             <Issue Name="MethodTypeParameterMoreMeaningfulName" Certainty="75" Level="CriticalWarning" Path="H:\Project\NewWork\Projects08\ORM" File="Map.cs" Line="71">在方法 'Mapping.Duplicator&lt;S, T&gt;(string[])' 中，考虑将泛型类型参数名称 'S' 改为一个更能体现其意义的名称。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+   <Name>标识符应正确拼写</Name>
+   <Description>组成标识符的各单词不应缩写，并且应正确拼写。如果此规则对应识别的词条产生了误报，请将该词添加到 FxCop 自定义字典中。</Description>
+   <Resolution Name="MethodTypeParameterMoreMeaningfulName">在方法 {0} 中，考虑将泛型类型参数名称 {1} 改为一个更能体现其意义的名称。</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/library/bb264492(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="NamingRules.dll" Version="9.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">类别</String>
+  <String Key="Certainty">确定性</String>
+  <String Key="CollapseAll">全部折叠</String>
+  <String Key="CheckId">检查 ID</String>
+  <String Key="Error">错误</String>
+  <String Key="Errors">错误</String>
+  <String Key="ExpandAll">全部展开</String>
+  <String Key="Help">帮助</String>
+  <String Key="Line">行</String>
+  <String Key="Messages">消息</String>
+  <String Key="LocationNotStoredInPdb">[位置未存储在 Pdb 中]</String>
+  <String Key="Project">项目</String>
+  <String Key="Resolution">解析</String>
+  <String Key="Rule">规则</String>
+  <String Key="RuleFile">规则文件</String>
+  <String Key="RuleDescription">规则说明</String>
+  <String Key="Source">源</String>
+  <String Key="Status">状态</String>
+  <String Key="Target">目标</String>
+  <String Key="Warning">警告</String>
+  <String Key="Warnings">警告</String>
+  <String Key="ReportTitle">代码分析报告</String>
+ </Localized>
+</FxCopReport>

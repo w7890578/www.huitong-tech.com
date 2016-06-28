@@ -1,0 +1,118 @@
+﻿@model List<Business.Article>
+<div class="catecontent">
+    <div class="leftpage">
+        <div>
+            <img width="232" height="88" alt="" src="~/@((ViewBag.Entity as Business.Article).ImgUrl)" border="0">
+        </div>
+        <div class="category_content" id="leftb">
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li><a   href="/@((ViewBag.Entity as Business.Article).Text)/Detail?ID=@item.ID&ParentID=@item.ParentID" class="lefton">@item.Title</a></li>
+                
+                }
+
+            </ul>
+        </div>
+     
+
+        <div style="margin: 10px 0px;">
+            <a href="/About/Detail?ID=27&ParentID=6">
+                <img width="221" height="67" alt="" src="../gywm_files/ab2_19.jpg" border="0"></a>
+        </div>
+        <script>
+            initM(0);
+        </script>
+    </div>
+    <div class="rightpage">
+        <div class="newscate">
+            <ul>
+                <li class="catename">@((ViewBag.Entity as Business.Article).Title) </li>
+                <li class="cateposition">您现在的位置：<a href="/Home">首页</a> &gt; <a href="/@((ViewBag.Entity as Business.Article).Text)?ParentID=@((ViewBag.Entity as Business.Article).ID)">@((ViewBag.Entity as Business.Article).Title)</a></li>
+            </ul>
+        </div>
+        <div class="textcontentt"></div>
+        <div class="contenttext">
+           @Html.Raw(ViewBag.Text)
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+
+
+@*<div class="catecontent">
+<div class="leftpage">
+<div><img width="232" height="88" alt="" src="@((ViewBag.Entity as Business.Article).ImgUrl)" border="0"></div>
+<div class="category_content" id="leftb">
+<ul>
+     @foreach (var item in Model)
+                {
+                    <li><a   href="/@((ViewBag.Entity as Business.Article).Text)/Detail?ID=@item.ID" class="lefton">@item.Title</a></li>
+                
+                }
+  </ul></div>
+<script>
+   function initM(v)
+   {
+ 
+document.getElementById("leftb").getElementsByTagName("li")[v].getElementsByTagName("a")[0].className="lefton";
+}
+</script>
+ 
+<style> 
+.category_content ul li a.lefton{ background:none;background-image:url(images/ab2_13.jpg)  ; background-position:center; background-repeat:no-repeat; color:#ffffff; !important;display:block;} 
+</style>
+ 
+<div style="margin: 10px 0px;"><a href="http://www.codetag.com.cn/guestbook.aspx"><img width="221" height="67" alt="" src="gywm_files/ab2_19.jpg" border="0"></a></div>
+<script>
+   initM(0);
+</script>
+       </div>
+<div class="rightpage">
+  <div class="newscate">
+    <ul>
+      <li class="catename">解决方案 </li>
+      <li class="cateposition">您现在的位置：<a href="http://www.codetag.com.cn/index.aspx">首页</a> &gt; <a href="http://www.codetag.com.cn/solutionhead.aspx">解决方案</a></li>
+    </ul>
+  </div>
+  <div class="textcontentt"></div>
+  <div class="contenttext">
+    <div class="productpic" style="height: 240px;">
+      <ul>
+        <li><a href="http://www.codetag.com.cn/solution.aspx?IntroCateId=89&amp;CateId=89"><img width="150" height="150" alt="" src="gywm2_files/fz02x-08552433635.jpg" border="0"></a></li>
+        <li class="pptitle"><a href="http://www.codetag.com.cn/solution.aspx?IntroCateId=89&amp;CateId=89">服装行业解决方案</a></li>
+      </ul>
+    </div>
+    <div class="productpic" style="height: 240px;">
+      <ul>
+        <li><a href="http://www.codetag.com.cn/solution.aspx?IntroCateId=114&amp;CateId=114"><img width="150" height="150" alt="" src="gywm2_files/4s03x-08575842942.jpg" border="0"></a></li>
+        <li class="pptitle"><a href="http://www.codetag.com.cn/solution.aspx?IntroCateId=114&amp;CateId=114">4S店智能透明车间解决方案</a></li>
+      </ul>
+    </div>
+    <div class="productpic" style="height: 240px;">
+      <ul>
+        <li><a href="http://www.codetag.com.cn/solution.aspx?IntroCateId=115&amp;CateId=115"><img width="150" height="150" alt="" src="gywm2_files/scx03x-08585097874.jpg" border="0"></a></li>
+        <li class="pptitle"><a href="http://www.codetag.com.cn/solution.aspx?IntroCateId=115&amp;CateId=115">电子工票解决方案</a></li>
+      </ul>
+    </div>
+    <div class="productpic" style="height: 240px;">
+      <ul>
+        <li><a href="http://www.codetag.com.cn/solution.aspx?IntroCateId=116&amp;CateId=116"><img width="150" height="150" alt="" src="gywm2_files/1x-08595449000.png" border="0"></a></li>
+        <li class="pptitle"><a href="http://www.codetag.com.cn/solution.aspx?IntroCateId=116&amp;CateId=116">网站版订货会解决方案</a></li>
+      </ul>
+    </div>
+    <div class="productpic" style="height: 240px;">
+      <ul>
+        <li><a href="http://www.codetag.com.cn/solution.aspx?IntroCateId=117&amp;CateId=117"><img width="150" height="150" alt="" src="gywm2_files/yw01x-09003413571.jpg" border="0"></a></li>
+        <li class="pptitle"><a href="http://www.codetag.com.cn/solution.aspx?IntroCateId=117&amp;CateId=117">燕窝食品安全解决方案</a></li>
+      </ul>
+    </div>
+    <div class="productpic" style="height: 240px;">
+      <ul>
+        <li><a href="http://www.codetag.com.cn/solution.aspx?IntroCateId=90&amp;CateId=90"><img width="150" height="150" alt="" src="gywm2_files/js01x-09011567038.jpg" border="0"></a></li>
+        <li class="pptitle"><a href="http://www.codetag.com.cn/solution.aspx?IntroCateId=90&amp;CateId=90">智能交通解决方案</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div style="clear: both;"></div></div>*@

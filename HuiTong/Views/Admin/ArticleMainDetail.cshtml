@@ -1,0 +1,44 @@
+﻿@model Business.Article
+@{
+    ViewBag.Title = "ArticleDetail";
+    Layout = "~/Views/Master/master.cshtml";
+}
+<script type="text/javascript" src="js/custom/forms1.js"></script>
+
+
+<div class="contenttitle2">
+    <h3><a href="/Admin/ArticleMain">栏目管理</a>&nbsp;&nbsp;>&nbsp;&nbsp;@Model.Title</h3>
+</div>
+<div id="validation" class="subcontent" style="">
+
+    <form id="form1" class="stdform" method="post" action="/Admin/ArticleMainUpdate" novalidate="novalidate" style="margin-left: -100px;" enctype="multipart/form-data">
+        <input type="hidden" name="ID" id="ID" value="@Model.ID"/>
+        <input type="hidden" name="DescriptionShow" id="DescriptionShow" value="@Model.Description"/>
+
+        <p>
+            <label>图片</label>
+            <span class="field">
+                <input type="file" name="Description" id="Description" class="longinput" value="@Model.Description" />
+
+            </span>
+        </p>
+
+        <p>
+            <label>图片</label>
+            <span class="field">
+                <img src="~/@Model.Description" style="width: 963px; height: 200px;" /> 
+            </span>
+        </p>
+
+
+
+        <br>
+
+        <p class="stdformbutton">
+            <button class="submit radius2"  >保&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存</button>
+ 
+        </p>
+
+    </form>
+
+</div>

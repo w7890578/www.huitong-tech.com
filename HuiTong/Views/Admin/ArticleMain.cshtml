@@ -1,0 +1,102 @@
+﻿@model List<Business.Article>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>天津慧通</title>
+    <link rel="stylesheet" href="css/style.default.css" type="text/css" />
+    <script type="text/javascript" src="js/plugins/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="js/custom/general.js"></script>
+    <script type="text/javascript" src="js/custom/tables.js"></script>
+    <!--[if IE 9]>
+    <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
+<![endif]-->
+    <!--[if IE 8]>
+    <link rel="stylesheet" media="screen" href="css/style.ie8.css"/>
+<![endif]-->
+    <!--[if lt IE 9]>
+	<script src="js/plugins/css3-mediaqueries.js"></script>
+<![endif]-->
+</head>
+<body class="withvernav">
+    <div class="bodywrapper">
+        @Html.Action("Top", "Admin")
+
+        <div class="centercontent tables">
+
+            <!--pageheader-->
+
+            <div id="contentwrapper" class="contentwrapper">
+                <div class="contenttitle2">
+                    <h3>栏目管理</h3>
+                </div>
+                <!--contenttitle-->
+                <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
+
+                    <thead>
+                        <tr>
+                            <th class="head0">栏目名称</th>
+                            <th class="head0">前台Banner图片</th>
+                            <th class="head0">操作</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="gradeA">
+                                <td>
+                                    @item.Title
+                                </td>
+                                <td>
+                                    <img style="width: 700px; height: 200px;" src="~/@item.Description" />
+                                </td>
+                                <td>
+                                    <a href="/Admin/ArticleMainDetail?ID=@item.ID" class="btn btn_orange btn_link"><span>修改图片</span></a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+    <!--bodywrapper-->
+
+
+
+    <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 1; top: 0px; left: 0px; display: none;"></ul>
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+</body>
+</html>
+<script type="text/javascript">
+    function Delete(id) {
+        if (!confirm("确定删除?")) {
+            return false;
+        }
+        jQuery.post("/Admin/ArticleDelete", { ID: id }, function (res) {
+            if (res == "ok") {
+                alert("删除成功");
+                window.location.reload();
+            }
+            else {
+                alert("删除失败！请联系管理员");
+                return false;
+            }
+        });
+    }
+
+</script>

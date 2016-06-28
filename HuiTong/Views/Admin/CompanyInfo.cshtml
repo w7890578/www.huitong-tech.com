@@ -1,0 +1,52 @@
+﻿@model Business.CompanyInfo
+@{
+    ViewBag.Title = "CompanyInfo";
+    Layout = "~/Views/Master/master.cshtml";
+}
+<script type="text/javascript" src="js/custom/forms2.js"></script>
+<div class="contenttitle2">
+    <h3>公司基本信息</h3>
+</div>
+
+<div id="validation" class="subcontent">
+    <form id="form1" class="stdform" method="post" action="/Admin/CompanyInfoSave">
+        <input type="hidden" name="ID" value="@Model.ID"/>
+        <p>
+            <label>公司名称</label>
+            <span class="field">
+                <input type="text" name="Name" id="Name" class="longinput" value="@Model.Name"/></span>
+        </p>
+        <p>
+            <label>公司地址</label>
+            <span class="field">
+                <input type="text" name="Address" id="Address" class="longinput" value="@Model.Address" /></span>
+        </p>
+        <p>
+            <label>联系人</label>
+            <span class="field">
+                <input type="text" name="ContactUserName" id="ContactUserName" class="longinput" value="@Model.ContactUserName"/></span>
+        </p>
+        <p>
+            <label>联系人电话</label>
+            <span class="field">
+                <input type="text" name="ContactUserMobile" id="ContactUserMobile" class="longinput" value="@Model.ContactUserMobile"/></span>
+        </p>
+        <p>
+            <label>固定电话</label>
+            <span class="field">
+                <input type="text" name="FixedPhone" id="FixedPhone" class="longinput" value="@Model.FixedPhone"/></span>
+        </p>
+        <p>
+            <label>联系人邮箱</label>
+            <span class="field">
+                <input type="text" name="Email" id="Email" class="longinput" value="@Model.Email"/></span>
+        </p>
+
+        <br />
+        <p class="stdformbutton">
+            <button class="submit radius2">保&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存</button>
+            <label style="color: red;">@ViewBag.Msg</label>
+        </p>
+    </form>
+</div>
+<!--subcontent-->

@@ -1,0 +1,40 @@
+登录地址：http://cp.hichina.com
+管理帐号(FTP帐号)： hxw019327
+管理密码(FTP密码)： huitong123
+IP地址：112.124.185.87
+
+数据库类型：Mssql
+数据库名称：hds1210715_db
+用户名：hds1210715
+密码：huitong123
+数据库地址：
+hds-121.hichina.com
+二级域名是http://hxw019327.my3w.com
+
+
+
+
+www.myhostadmin.net
+登录名：huitongtech
+登录密码：huitong123
+
+ 
+
+管理地址：http://www.myhostadmin.net
+FTP用户名：   huitongtech
+FTP密码：   ass10bwj9e
+上传地址：   huitongtech.gotoftp2.com
+
+域名:huitong-tech1.com
+产品名称:西部港台tw000型
+开通时间:2015-4-18 13:51:07
+到期时间:2016-4-18 13:51:07
+产品状态:正常
+控制面板用户名:huitongtech
+控制面板密码:ass10bwj9e
+备注:
+FTP用户名:huitongtech
+FTP密码:ass10bwj9e
+域名:huitong-tech1.com
+IP地址:huitongtech.gotoftp2.com
+赠送的二级域名:huitongtech.gotoip2.com

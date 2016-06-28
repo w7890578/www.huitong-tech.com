@@ -1,0 +1,243 @@
+﻿@model Business.Article
+@{
+    ViewBag.Title = "ArticleDetail";
+    Layout = "~/Views/Master/master.cshtml";
+}
+<script type="text/javascript" src="js/custom/forms1.js"></script>
+
+<link href="~/umeditor1_2_2-utf8-net/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="~/umeditor1_2_2-utf8-net/third-party/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="~/umeditor1_2_2-utf8-net/umeditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="~/umeditor1_2_2-utf8-net/umeditor.min.js"></script>
+<script type="text/javascript" src="~/umeditor1_2_2-utf8-net/lang/zh-cn/zh-cn.js"></script>
+<style type="text/css">
+    h1 {
+        font-family: "微软雅黑";
+        font-weight: normal;
+    }
+
+    label.error {
+        color: red;
+    }
+
+    .btn {
+        display: inline-block;
+        *display: inline;
+        padding: 4px 12px;
+        margin-bottom: 0;
+        *margin-left: .3em;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333333;
+        text-align: center;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+        vertical-align: middle;
+        cursor: pointer;
+        background-color: #f5f5f5;
+        *background-color: #e6e6e6;
+        background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+        background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+        background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+        background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+        background-repeat: repeat-x;
+        border: 1px solid #cccccc;
+        *border: 0;
+        border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        border-bottom-color: #b3b3b3;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        *zoom: 1;
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+        .btn:hover,
+        .btn:focus,
+        .btn:active,
+        .btn.active,
+        .btn.disabled,
+        .btn[disabled] {
+            color: #333333;
+            background-color: #e6e6e6;
+            *background-color: #d9d9d9;
+        }
+
+        .btn:active,
+        .btn.active {
+            background-color: #cccccc \9;
+        }
+
+        .btn:first-child {
+            *margin-left: 0;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            color: #333333;
+            text-decoration: none;
+            background-position: 0 -15px;
+            -webkit-transition: background-position 0.1s linear;
+            -moz-transition: background-position 0.1s linear;
+            -o-transition: background-position 0.1s linear;
+            transition: background-position 0.1s linear;
+        }
+
+        .btn:focus {
+            outline: thin dotted #333;
+            outline: 5px auto -webkit-focus-ring-color;
+            outline-offset: -2px;
+        }
+
+        .btn.active,
+        .btn:active {
+            background-image: none;
+            outline: 0;
+            -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+            -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn.disabled,
+        .btn[disabled] {
+            cursor: default;
+            background-image: none;
+            opacity: 0.65;
+            filter: alpha(opacity=65);
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+</style>
+
+
+<div class="contenttitle2">
+    <h3><a href="/Admin/Article?ParentID=@((ViewBag.Entity as Business.Article).ParentID)">@ViewBag.ParentTitle</a>&nbsp;&nbsp;>&nbsp; &nbsp;@((ViewBag.Entity as Business.Article).Title == "" ? "添加内容" : (ViewBag.Entity as Business.Article).Title)</h3>
+</div>
+<div id="validation" class="subcontent" style="">
+
+    <form id="form1" class="stdform" method="post" action="/Admin/ArticleAdd" novalidate="novalidate" style="margin-left: -100px;" enctype="multipart/form-data">
+        <input type="hidden" name="ID" id="ID" value="@((ViewBag.Entity as Business.Article).ID)"/>
+        <input type="hidden" name="ParentID" id="ParentID" value="@((ViewBag.Entity as Business.Article).ParentID)"/>
+        <input type="hidden" name="Text" id="Text" value="@MvcHtmlString.Create((ViewBag.Entity as Business.Article).Text)"/>
+        <p>
+            <label>标题</label>
+            <span class="field">
+
+                <input type="text" name="Title" id="Title" class="longinput" value="@((ViewBag.Entity as Business.Article).Title)" />
+                <label for='Title' generated='true' class='error' style="display: none;">请输入标题</label>
+            </span>
+        </p>
+        <p>
+            <label>描述（首页展示）</label>
+            <span class="field">
+
+                <input type="text" name="Description" id="Description" class="longinput" value="@((ViewBag.Entity as Business.Article).Description)" />
+               
+            </span>
+        </p>
+        <p>
+            <label>是否推荐至首页</label>
+            <span class="field">
+
+                <select name="IsHomeShow" class="uniformselect" > 
+                    <option value="fasle"  @if (!(ViewBag.Entity as Business.Article).IsHomeShow)
+                                       {
+                                          @Html.Raw("selected='selected'")
+                                       }>否</option>
+                    <option value="true" @if ((ViewBag.Entity as Business.Article).IsHomeShow)
+                                      {
+                                          @Html.Raw("selected='selected'")
+                                      }>是
+                    </option>
+
+                </select>
+
+            </span>
+        </p>
+        <p>
+            <label>排序（越小越靠前）</label>
+            <span class="field">
+                <input  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,''"
+                     type="text" name="Sort" id="Sort" class="longinput" value="@((ViewBag.Entity as Business.Article).Sort)" />
+                <label for='Title' generated='true' class='error' style="display: none;">请输入排序值</label> 
+            </span>
+        </p> 
+        <p>
+            <label>图片</label>
+            <span class="field">
+                <input type="file" name="ImgUrl" id="ImgUrl" class="longinput" value="@((ViewBag.Entity as Business.Article).ImgUrl)" />
+                <label for='Title' generated='true' class='error' style="display: none;">请上传图片</label>
+                <input type="hidden" name="ImgUrlShow" value="@((ViewBag.Entity as Business.Article).ImgUrl)"/>
+            </span>
+        </p>
+        @if ((ViewBag.Entity as Business.Article).ID > 0)
+        {
+            <p>
+                <label>图片</label>
+                <span class="field">
+                    <img src="@((ViewBag.Entity as Business.Article).ImgUrl)" style="height: 210px; width: 270px;" />
+
+                </span>
+            </p>
+        }
+        <p>
+            <label>内容</label>
+            <span class="field">
+                <!--style给定宽度可以影响编辑器的最终宽度-->
+                <script type="text/plain" id="Detail" style="width: 840px; height: 240px;">
+                     <p>@MvcHtmlString.Create((ViewBag.Entity as Business.Article).Text)</p> 
+                </script>
+                <script type="text/javascript">
+                    //实例化编辑器
+                    var um = UM.getEditor('Detail');
+                </script>
+            </span>
+        </p>
+
+        <br>
+
+        <p class="stdformbutton">
+            <button class="submit radius2" id="btnSave">保&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存</button>
+
+            &nbsp;&nbsp;<label id="lbMsg" style="color: red;">@ViewBag.Msg</label>
+        </p>
+
+    </form>
+
+</div>
+<script type="text/javascript">
+    jQuery(function () {
+        function TextValidate(id) {
+            var title = jQuery.trim(jQuery("#"+id).val());
+            var titleHtmlError = "";
+            if (title == "") {
+                jQuery("#" + id).addClass("error").parent(".field").find("label").show();
+                return false;
+            }
+            else {
+                jQuery("#" + id).removeClass("error").parent(".field").find("label").hide();
+                return true;
+            }
+        }
+        jQuery("#btnSave").click(function () {
+            if (!TextValidate("Title") || !TextValidate("Sort")) {
+                return false;
+            }
+            $("#Text").val(escape(UM.getEditor('Detail').getContent()));
+            jQuery("#form1").submit();
+        });
+        jQuery("#Title").blur(function () {
+            TextValidate("Title");
+        });
+        jQuery("#Sort").blur(function () {
+            TextValidate("Sort");
+        });
+
+    })
+</script>

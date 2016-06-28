@@ -1,0 +1,3040 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ORM</name>
+    </assembly>
+    <members>
+        <member name="T:ORM.TableConfig`1">
+            <summary>
+            数据表及其字段配置
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:ORM.TableConfig`1.DbInstance">
+            <summary>
+            数据库配置节点(前缀)
+            </summary>
+        </member>
+        <member name="F:ORM.TableConfig`1.Name">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="F:ORM.TableConfig`1.DelField">
+            <summary>
+            逻辑删除字段
+            </summary>
+        </member>
+        <member name="F:ORM.TableConfig`1.ALL">
+            <summary>
+            所有字段
+            </summary>
+        </member>
+        <member name="M:ORM.TableConfig`1.DicForAttribute">
+            <summary>
+            按数据字段名查找字段的字典
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ORM.TableConfig`1.Attributes">
+            <summary>
+            所有数据库字段信息
+            </summary>
+        </member>
+        <member name="F:ORM.TableConfig`1.DataFields">
+            <summary>
+            Insert和update字段
+            </summary>
+        </member>
+        <member name="M:ORM.TableConfig`1.DataFieldNames">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ORM.TableConfig`1.Keys">
+            <summary>
+            主键字段
+            </summary>
+        </member>
+        <member name="F:ORM.TableConfig`1.Identity">
+            <summary>
+            自增列
+            </summary>
+        </member>
+        <member name="F:ORM.TableConfig`1.DefOrderBy">
+            <summary>
+            默认排序
+            </summary>
+        </member>
+        <member name="M:ORM.TableConfig`1.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ORM.TableConfig`1.checkTable(ORM.DbTableAttribute)">
+            <summary>
+            获取DbTableAttribute配置
+            </summary>
+            <param name="attribute"></param>
+        </member>
+        <member name="M:ORM.TableConfig`1.CheckName(System.String,System.String)">
+            <summary>
+            sql表名规则
+            </summary>
+            <param name="schema"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.TableConfig`1.checkFields(System.String)">
+            <summary>
+            获取所有DbFieldAttribute配置
+            </summary>
+            <param name="delField"></param>
+        </member>
+        <member name="M:ORM.TableConfig`1.CheckDataFields(ORM.TableConfig{`0},`0,System.String[]@)">
+            <summary>
+            按字段获取数据(如果columns为空设置columns为默认值)
+            </summary>
+            <param name="config"></param>
+            <param name="obj"></param>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ORM.IgnoreAttribute">
+            <summary>
+            含忽略(Ignore)标记的字段不会被ORM初始化数据(IObj除外)
+            </summary>
+        </member>
+        <member name="M:ORM.IgnoreAttribute.GetAttributeType">
+            <summary>
+            缓存类型IgnoreAttribute
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.IgnoreAttribute.CheckIgnore(System.Reflection.MemberInfo)">
+            <summary>
+            判断是否含忽略标记
+            </summary>
+            <param name="memberInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ORM.DAL`1">
+            <summary>
+            数据库处理类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:ORM.DAL`1.ViewByKeys(System.Object[])">
+            <summary>
+            按主键取单条数据
+            </summary>
+            <param name="keys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.tran(System.Object[])">
+            <summary>
+            模型转化方法
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.tran(System.Collections.Generic.List{System.Object[]})">
+            <summary>
+            列表模型转化方法
+            </summary>
+            <param name="datas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.Add(`0,System.String,System.String[])">
+            <summary>
+            添加
+            </summary>
+            <param name="obj"></param>
+            <param name="cacheName"></param>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.UpdateByKeys(`0,System.Object[],System.String,System.String[])">
+            <summary>
+            按主键修改
+            </summary>
+            <param name="obj"></param>
+            <param name="keys"></param>
+            <param name="cacheName"></param>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.DelByKeys(System.Object[])">
+            <summary>
+            按主键删除
+            </summary>
+            <param name="keys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.#ctor">
+            <summary>
+            数据库处理类
+            </summary>
+        </member>
+        <member name="M:ORM.DAL`1.Config">
+            <summary>
+            数据表及其字段配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.Fields">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.Keys">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.keyFields">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.getTable">
+            <summary>
+            通过重写该方法实现分表逻辑
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.initDb(ORM.GetDb,ORM.GetDb,ORM.GetDb)">
+            <summary>
+            初始化获取数据库节点的方法
+            </summary>
+            <param name="normal"></param>
+            <param name="read"></param>
+            <param name="write"></param>
+        </member>
+        <member name="M:ORM.DAL`1.initDb(System.String)">
+            <summary>
+            初始化数据库节点
+            </summary>
+            <param name="db"></param>
+        </member>
+        <member name="M:ORM.DAL`1.getAdminDB">
+            <summary>
+            通过重写该方法实现分库逻辑
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.getReadDB">
+            <summary>
+            通过重写该方法实现分库逻辑
+            </summary>
+        </member>
+        <member name="M:ORM.DAL`1.getWriteDB">
+            <summary>
+            通过重写该方法实现分库逻辑
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ORM.DAL`1.parmCache">
+            <summary>
+            查询参数缓存
+            </summary>
+        </member>
+        <member name="M:ORM.DAL`1.FieldsShow">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.DelFieldShow">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.StateCondition">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.KeysCondition">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.AddReturnSql">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.ViewSql">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.DelSql">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.Writer">
+            <summary>
+            使用反射给对象初始化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DAL`1.IObjWriter">
+            <summary>
+            使用IObj的Init给对象初始化(如果T is IObj)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ORM.DAL`1.table">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="P:ORM.DAL`1.AdminDB">
+            <summary>
+            管理数据库对象
+            </summary>
+        </member>
+        <member name="P:ORM.DAL`1.ReadDB">
+            <summary>
+            只读数据库对象
+            </summary>
+        </member>
+        <member name="P:ORM.DAL`1.WriteDB">
+            <summary>
+            写数据库对象
+            </summary>
+        </member>
+        <member name="M:ORM.MapFrom`1.Read(`0,System.String)">
+            <summary>
+            obj.name
+            </summary>
+            <param name="obj"></param>
+            <param name="name">属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.MapFrom`1.Read(`0,System.String,System.Object@)">
+            <summary>
+            是否存在属性
+            </summary>
+            <param name="obj"></param>
+            <param name="name">属性名</param>
+            <param name="val">属性值</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.MapFrom`1.Read(`0,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="names"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.MapFrom`1.Emit(ORM.Field{`0})">
+            <summary>
+            单个属性写方法
+            </summary>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ORM.Field`1">
+            <summary>
+            字段信息类
+            </summary>
+        </member>
+        <member name="M:ORM.Field`1.#ctor">
+            <summary>
+            保护(避免无参实例化)
+            </summary>
+        </member>
+        <member name="F:ORM.Field`1._objType">
+            <summary>
+            字段所属类型
+            </summary>
+        </member>
+        <member name="F:ORM.Field`1._name">
+            <summary>
+            字段名称
+            </summary>
+        </member>
+        <member name="F:ORM.Field`1._member">
+            <summary>
+            属性(或字段)
+            </summary>
+        </member>
+        <member name="F:ORM.Field`1._memberType">
+            <summary>
+            属性(或字段)的类型
+            </summary>
+        </member>
+        <member name="M:ORM.Field`1.Filters">
+            <summary>
+            数据过滤器
+            </summary>
+        </member>
+        <member name="F:ORM.Field`1._getter">
+            <summary>
+            读属性的方法
+            </summary>
+        </member>
+        <member name="M:ORM.Field`1.Getter">
+            <summary>
+            读属性的方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ORM.Field`1._setter">
+            <summary>
+            写属性的方法
+            </summary>
+        </member>
+        <member name="M:ORM.Field`1.Setter">
+            <summary>
+            写属性的方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Field`1.Read(`0)">
+            <summary>
+            读属性值
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Field`1.Write(`0,System.Object)">
+            <summary>
+            写属性值
+            </summary>
+            <param name="obj"></param>
+            <param name="val"></param>
+        </member>
+        <member name="P:ORM.Field`1.Name">
+            <summary>
+            字段名称
+            </summary>
+        </member>
+        <member name="P:ORM.Field`1.Member">
+            <summary>
+            属性(或字段)
+            </summary>
+        </member>
+        <member name="P:ORM.Field`1.MemberType">
+            <summary>
+            属性(或字段)的类型
+            </summary>
+        </member>
+        <member name="P:ORM.Field`1.CanRead">
+            <summary>
+            是否可读
+            </summary>
+        </member>
+        <member name="P:ORM.Field`1.CanWrite">
+            <summary>
+            是否可写
+            </summary>
+        </member>
+        <member name="P:ORM.Field`1.Attribute">
+            <summary>
+            数据库字段信息
+            </summary>
+        </member>
+        <member name="T:ORM.Property`1">
+            <summary>
+            属性信息类
+            </summary>
+        </member>
+        <member name="P:ORM.Property`1.CanRead">
+            <summary>
+            是否可读
+            </summary>
+        </member>
+        <member name="P:ORM.Property`1.CanWrite">
+            <summary>
+            是否可写
+            </summary>
+        </member>
+        <member name="T:ORM.FieldCollection`1">
+            <summary>
+            字段集合类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:ORM.FieldCollection`1.GetKeyForItem(ORM.Field{`0})">
+            <summary>
+            设置Name属性为主键
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.FieldCollection`1.Check(System.Reflection.MemberInfo)">
+            <summary>
+            判断是否可以添加
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.FieldCollection`1.TryGetByName(System.String,ORM.Field{`0}@)">
+            <summary>
+            尝试按名称获取
+            </summary>
+            <param name="name"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.FieldCollection`1.Names">
+            <summary>
+            所有属性名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.FieldCollection`1.FindAll(ORM.FieldCollection{`0},System.Predicate{ORM.Field{`0}})">
+            <summary>
+            查找
+            </summary>
+            <param name="fileds"></param>
+            <param name="match"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ORM.GenericClass`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:ORM.GenericClass`1.TargetType">
+            <summary>
+            类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.TargetTypeName">
+            <summary>
+            类型名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.TargetNameSpace">
+            <summary>
+            命名空间名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.TargetFullName">
+            <summary>
+            完整类型名(含命名空间)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.TimeoutStr(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.CheckTimeout(`0,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.CheckTimeout(System.Collections.Generic.List{`0},System.String)">
+            <summary>
+            
+            </summary>
+            <param name="list"></param>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.CheckList(System.Collections.Generic.ICollection{`0},System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="list"></param>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.CheckList(System.Collections.Generic.ICollection{`0})">
+            <summary>
+            
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.CheckTimeout(System.Collections.Generic.List{`0},System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="list"></param>
+            <param name="url"></param>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.CheckCacheAble(FunLayer.ICacheAble)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.CheckCacheAble(`0)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.GetCache(CacheMan.ICache,System.String,`0@)">
+            <summary>
+            
+            </summary>
+            <param name="cacher"></param>
+            <param name="cacheName"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.SetCache(CacheMan.ICache,System.String,System.Int32,`0)">
+            <summary>
+            
+            </summary>
+            <param name="cacher"></param>
+            <param name="cacheName"></param>
+            <param name="time"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:ORM.GenericClass`1.CheckCache(CacheMan.ICache,System.String,System.Int32,FunLayer.Func{`0},System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="cacher"></param>
+            <param name="key"></param>
+            <param name="time"></param>
+            <param name="getT"></param>
+            <param name="paramObjs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.CheckCache(CacheMan.ICache,System.String,System.Int32,FunLayer.Func{`0},`0@,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="cacher"></param>
+            <param name="key"></param>
+            <param name="time"></param>
+            <param name="getT"></param>
+            <param name="obj"></param>
+            <param name="paramObjs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.CheckCodeCache(CacheMan.ICache,System.String,System.Int32,FunLayer.Func{`0},`0@)">
+            <summary>
+            
+            </summary>
+            <param name="cacher"></param>
+            <param name="key"></param>
+            <param name="time"></param>
+            <param name="getT"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.GenericClass`1.CheckCodeCache(CacheMan.ICache,System.String,System.Int32,FunLayer.Func{`0})">
+            <summary>
+            
+            </summary>
+            <param name="cacher"></param>
+            <param name="key"></param>
+            <param name="time"></param>
+            <param name="getT"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ORM.FixDescriptor">
+            <summary>
+            属性包装类
+            </summary>
+        </member>
+        <member name="F:ORM.FixDescriptor._val">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="F:ORM.FixDescriptor._name">
+            <summary>
+            属性名
+            </summary>
+        </member>
+        <member name="M:ORM.FixDescriptor.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:ORM.FixDescriptor.Check(ORM.FixDescriptorCollection,System.Collections.Generic.Dictionary{System.String,FunLayer.Func{System.Object}})">
+            <summary>
+            固化
+            </summary>
+            <param name="properties"></param>
+            <param name="fixIndexs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.FixDescriptor.Fix(ORM.IView)">
+            <summary>
+            固化属性
+            </summary>
+            <param name="view"></param>
+        </member>
+        <member name="M:ORM.FixDescriptor.Fix(System.Collections.Generic.IEnumerable{ORM.IView})">
+            <summary>
+            固化属性
+            </summary>
+            <param name="views"></param>
+        </member>
+        <member name="M:ORM.FixDescriptor.GetValue(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="component"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.FixDescriptor.CanResetValue(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="component"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.FixDescriptor.ResetValue(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="component"></param>
+        </member>
+        <member name="M:ORM.FixDescriptor.SetValue(System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="component"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ORM.FixDescriptor.ShouldSerializeValue(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="component"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ORM.FixDescriptor.ComponentType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ORM.FixDescriptor.IsReadOnly">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ORM.FixDescriptor.PropertyType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ORM.DbTableAttribute">
+            <summary>
+            标记数据表及其数据库和删除标识字段
+            </summary>
+        </member>
+        <member name="M:ORM.DbTableAttribute.GetAttributeType">
+            <summary>
+            缓存类型DbTableAttribute
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DbTableAttribute.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="P:ORM.DbTableAttribute.Name">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="P:ORM.DbTableAttribute.DbInstance">
+            <summary>
+            数据库配置节点
+            </summary>
+        </member>
+        <member name="P:ORM.DbTableAttribute.DelField">
+            <summary>
+            逻辑删除状态字段
+            </summary>
+        </member>
+        <member name="T:ORM.Mapping">
+            <summary>
+            映射工具类
+            </summary>
+        </member>
+        <member name="M:ORM.Mapping.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ORM.Mapping.Custom(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="fromName"></param>
+            <param name="toName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.Read``1(``0,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="name">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.Read``1(``0,System.String[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.Write``1(``0,System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="name"></param>
+            <param name="val">T属性名</param>
+        </member>
+        <member name="M:ORM.Mapping.Duplicator``2(System.String[])">
+            <summary>
+            获取数据转化器
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.Duplicator``2">
+            <summary>
+            获取数据转化器
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.Copy``2(``0,``1,System.String)">
+            <summary>
+            复制from的属性到to
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="from"></param>
+            <param name="to"></param>
+            <param name="name">T属性名</param>
+        </member>
+        <member name="M:ORM.Mapping.Copy``2(``0,``1,System.String[])">
+            <summary>
+            复制from的属性到to
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="from"></param>
+            <param name="to"></param>
+            <param name="names">T属性名</param>
+        </member>
+        <member name="M:ORM.Mapping.Copy``2(``0,``1)">
+            <summary>
+            复制from的属性到to
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="from"></param>
+            <param name="to"></param>
+        </member>
+        <member name="M:ORM.Mapping.Convert``2(``0,System.String[])">
+            <summary>
+            把S对象转化为T
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="src"></param>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.Convert``2(``0)">
+            <summary>
+            把S对象转化为T
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="src"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.Convert``2(``0[],System.String[])">
+            <summary>
+            把S数组转化为T数组
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.Convert``2(``0[])">
+            <summary>
+            把S数组转化为T数组
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.ConvertTo``1(System.Data.DataTable,System.String[])">
+            <summary>
+            把Table转化为类型T的数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dt"></param>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.ConvertTo``1(System.Data.DataTable)">
+            <summary>
+            把Table转化为类型T的数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.Convert``2(System.Collections.Generic.IEnumerable{``0},System.String[])">
+            <summary>
+            把S列表转化T列表
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="enumerator"></param>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.Convert``2(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            把S列表转化T列表
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.GetStrType">
+            <summary>
+            常用类型(string)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.GetIntType">
+            <summary>
+            常用类型(int)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.GetObjType">
+            <summary>
+            常用类型(object)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.GetObjsType">
+            <summary>
+            常用类型(object[])
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.checkName(System.String)">
+            <summary>
+            把目的类的属性名转化为原类属性名
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.duplicator``2(System.String[])">
+             <summary>
+            获取数据转化方法
+             </summary>
+             <typeparam name="S"></typeparam>
+             <typeparam name="T"></typeparam>
+             <param name="names">T的属性名</param>
+             <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.convert``2(``0,System.String[])">
+            <summary>
+            
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="src"></param>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.convert``2(``0[],System.String[])">
+            <summary>
+            转化数组
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.convert``2(System.Collections.Generic.IEnumerable{``0},System.String[])">
+            <summary>
+            转化泛型集合
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="enumerator"></param>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.convertTo``1(System.Data.DataTable,System.String[])">
+            <summary>
+            Table转化为T数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dt"></param>
+            <param name="names"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.copy``2(``0,``1,System.String)">
+            <summary>
+            复制属性name
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="from"></param>
+            <param name="to"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:ORM.Mapping.copy``2(``0,``1,System.String[])">
+            <summary>
+            复制from的属性到to
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="from"></param>
+            <param name="to"></param>
+            <param name="names">T属性名</param>
+        </member>
+        <member name="M:ORM.Mapping.CheckType(System.Object,System.String)">
+            <summary>
+            基本类型数据确认
+            </summary>
+            <param name="typeName"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.EmitReadField(System.Reflection.Emit.ILGenerator,System.Reflection.FieldInfo)">
+            <summary>
+            读字段
+            </summary>
+            <param name="generator"></param>
+            <param name="field"></param>
+        </member>
+        <member name="M:ORM.Mapping.EmitReadProperty(System.Reflection.Emit.ILGenerator,System.Reflection.PropertyInfo)">
+            <summary>
+            调用读属性方法
+            </summary>
+            <param name="generator"></param>
+            <param name="property"></param>
+        </member>
+        <member name="M:ORM.Mapping.EmitReadIndex(System.Reflection.Emit.ILGenerator,System.Reflection.PropertyInfo,System.Type)">
+            <summary>
+            从索引器中读取数据
+            </summary>
+            <param name="generator"></param>
+            <param name="member"></param>
+            <param name="memberType"></param>
+        </member>
+        <member name="M:ORM.Mapping.EmitReadArray(System.Reflection.Emit.ILGenerator,System.Type)">
+            <summary>
+            从数组中读取数据
+            </summary>
+            <param name="generator"></param>
+            <param name="memberType"></param>
+        </member>
+        <member name="M:ORM.Mapping.EmitWriteField(System.Reflection.Emit.ILGenerator,System.Reflection.FieldInfo)">
+            <summary>
+            写字段
+            </summary>
+            <param name="generator"></param>
+            <param name="field"></param>
+        </member>
+        <member name="M:ORM.Mapping.EmitWriteProperty(System.Reflection.Emit.ILGenerator,System.Reflection.PropertyInfo)">
+            <summary>
+            调用写属性方法
+            </summary>
+            <param name="generator"></param>
+            <param name="property"></param>
+        </member>
+        <member name="M:ORM.Mapping.Box(System.Reflection.Emit.ILGenerator,System.Type,System.Type)">
+            <summary>
+            装箱
+            </summary>
+            <param name="generator"></param>
+            <param name="valueType"></param>
+            <param name="objType"></param>
+        </member>
+        <member name="M:ORM.Mapping.UnBox(System.Reflection.Emit.ILGenerator,System.Type,System.Type)">
+            <summary>
+            拆箱
+            </summary>
+            <param name="generator"></param>
+            <param name="valType"></param>
+            <param name="objType"></param>
+        </member>
+        <member name="M:ORM.Mapping.EmitCheckType(System.Reflection.Emit.ILGenerator,System.Type,System.Type)">
+            <summary>
+            类型转化
+            </summary>
+            <param name="generator"></param>
+            <param name="type"></param>
+            <param name="objType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.EmitStrToInt(System.Reflection.Emit.ILGenerator,System.Type,System.Type,System.Int32)">
+            <summary>
+            字符串转化为int
+            </summary>
+            <param name="generator"></param>
+            <param name="intType"></param>
+            <param name="objType"></param>
+            <param name="def">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Mapping.EmitCheckNull(System.Reflection.Emit.ILGenerator,System.Reflection.Emit.Label,System.Reflection.Emit.LocalBuilder)">
+            <summary>
+            判断是否为null(为null或者DBNull跳转到lbRet)
+            </summary>
+            <param name="generator"></param>
+            <param name="lbRet"></param>
+            <param name="local"></param>
+        </member>
+        <member name="T:ORM.Map">
+            <summary>
+            映射器
+            </summary>
+        </member>
+        <member name="M:ORM.Map.Custom(System.String,System.String)">
+            <summary>
+            增加映射规则
+            </summary>
+            <param name="fromName"></param>
+            <param name="toName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Map.checkName(System.String)">
+            <summary>
+            把目的类的属性名转化为原类属性名
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Map.Duplicator``2(System.String[])">
+            <summary>
+            获取数据转化器
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Map.Duplicator``2">
+            <summary>
+            获取数据转化器
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Map.Copy``2(``0,``1,System.String)">
+            <summary>
+            复制from的属性到to
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="from"></param>
+            <param name="to"></param>
+            <param name="name">T属性名</param>
+        </member>
+        <member name="M:ORM.Map.Copy``2(``0,``1,System.String[])">
+            <summary>
+            复制from的属性到to
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="from"></param>
+            <param name="to"></param>
+            <param name="names">T属性名</param>
+        </member>
+        <member name="M:ORM.Map.Copy``2(``0,``1)">
+            <summary>
+            复制from的属性到to
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="from"></param>
+            <param name="to"></param>
+        </member>
+        <member name="M:ORM.Map.Convert``2(``0,System.String[])">
+            <summary>
+            把S对象转化为T
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="src"></param>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Map.Convert``2(``0)">
+            <summary>
+            把S对象转化为T
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="src"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Map.Convert``2(``0[],System.String[])">
+            <summary>
+            把S数组转化为T数组
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Map.Convert``2(``0[])">
+            <summary>
+            把S数组转化为T数组
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Map.ConvertTo``1(System.Data.DataTable,System.String[])">
+            <summary>
+            把Table转化为类型T的数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dt"></param>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Map.ConvertTo``1(System.Data.DataTable)">
+            <summary>
+            把Table转化为类型T的数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Map.Convert``2(System.Collections.Generic.IEnumerable{``0},System.String[])">
+            <summary>
+            把S列表转化T列表
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="enumerator"></param>
+            <param name="names">T属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Map.Convert``2(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            把S列表转化T列表
+            </summary>
+            <typeparam name="S"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ORM.BLL`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:ORM.IQuery">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ORM.IQuery.Conditions">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.IQuery.StateCondition">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.IQuery.Conditions(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="delState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.IQuery.QueryPrams">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.IQuery.DALFields">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ORM.IQuery.table">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="M:ORM.BLL`1.getCacher(System.String)">
+            <summary>
+            获取缓存管理对象
+            </summary>
+            <param name="instance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.getInstance``1(System.String,FunLayer.Func{``0})">
+            <summary>
+            从缓存中获取业务逻辑对象
+            </summary>
+            <typeparam name="BLLClass"></typeparam>
+            <param name="cacheName"></param>
+            <param name="getBLL"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:ORM.BLL`1.#ctor(ORM.DAL{`0})">
+            <summary>
+            获取BLL的实例
+            </summary>
+            <param name="dal">Dal&lt;T&gt;的实例</param>
+        </member>
+        <member name="M:ORM.BLL`1.GetColumn(System.String)">
+            <summary>
+            获取第一行指定列的数据
+            </summary>
+            <param name="columnName">字段名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.GetColumns(System.String[])">
+            <summary>
+            获取第一行指定列的集合的数据
+            </summary>
+            <param name="columns">字段名称集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.ViewByKeys(System.Object[])">
+            <summary>
+            获取指定主键的数据实体
+            </summary>
+            <param name="keys">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.ShowByKeys(System.Object[])">
+            <summary>
+            获取指定主键的数据实体
+            </summary>
+            <param name="keys">主键</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.List(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="num"></param>
+            <param name="start"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.List0(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.List(System.Collections.Generic.List{`0},System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="list"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.List0(System.Collections.Generic.List{`0},System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="list"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.ListKeyIndex(System.Object[])">
+            <summary>
+            获取当前值所在位置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.ListAll">
+            <summary>
+            获取本表所有数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.ListColumns(System.Int32,System.Int32,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="num"></param>
+            <param name="start"></param>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.ListColumnsAll(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.GroupList(System.String[],System.String[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="by"></param>
+            <param name="columns"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.GroupAll(System.String[],System.String[])">
+            <summary>
+            分组统计
+            </summary>
+            <param name="by"></param>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Count">
+            <summary>
+            统计本表总数据量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.GroupCount(System.String[])">
+            <summary>
+            检测根据指定关键字进行分组后的统计记录数
+            </summary>
+            <param name="by">分组关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Add(System.String,System.String[],System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="cacheName"></param>
+            <param name="columns"></param>
+            <param name="objs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Add(System.String[],System.Object[])">
+            <summary>
+            <para>使用objs,添加columns等列</para>
+            <para>eg:</para>
+            <para>string[] cols = new string[] { "title", "content" };</para>
+            <para>object[] objs = new object[] { title, content };</para>
+            int id = Transform.Int(UserInfoBLL.Instance.Add(cols, objs));
+            </summary>
+            <param name="columns">需要插入的字段列表</param>
+            <param name="objs">待插入的对象列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Add(`0,System.String,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="cacheName"></param>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Add(`0,System.String[])">
+            <summary>
+            <para>将对象obj中指定列添加至数据库</para>
+            <para>eg:</para>
+            <para>UserInfo obj = new UserInfo();</para>
+            <para>UserInfoBLL.Instance.Add(obj,new string[]{"id","userName"});</para>
+            </summary>
+            <param name="obj">待添加到数据库的对象</param>
+            <param name="columns">待插入数据库的字段列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Add(`0)">
+            <summary>
+            <para>将对象obj添加至数据库</para>
+            <para>eg:</para>
+            <para>UserInfo obj = new UserInfo();</para>
+            <para>UserInfoBLL.Instance.Add(obj);</para>
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.UpdateByKeys(System.String,System.String,System.Object[],System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="statement"></param>
+            <param name="cacheName"></param>
+            <param name="keys"></param>
+            <param name="objects"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Update(`0,System.String[])">
+            <summary>
+            <para>将对象obj的指定字段列表的数据更新至数据库</para>
+            <para>eg:</para>
+            <para>UserInfo obj=new UserInfo{Id=1,Name="A",Email="a@b.cn"};</para>
+            UserInfoBll.Instanse.Update(obj,new string[]{"Name","Email"});
+            </summary>
+            <param name="obj">待更新的对象的实例</param>
+            <param name="columns">待更新字段列表</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:ORM.BLL`1.Update(`0)">
+            <summary>
+            <para>按照主键值将对象obj所有字段信息都更新至数据库</para>
+            <para>eg:</para>
+            <para>UserInfo obj=new UserInfo();</para>
+            UserInfoBll.Instanse.Update(obj);
+            </summary>
+            <param name="obj">待更新的对象的实例</param>
+            <returns>操作结果</returns>
+        </member>
+        <member name="M:ORM.BLL`1.DelByKeys(System.Object[])">
+            <summary>
+            <para>根据指定的主键列表删除数据(物理或逻辑删除)</para>
+            <para>ps:是否是逻辑删除是由待删除的实体类定义的DbTableAttribute特性的DelField属性来控制的</para>
+            <para>如果在设置了DelField属性设置了一个特定的数据库列</para>
+            <para>(如:[DbTable("UserInfo",DelField="state")])，则为逻辑删除，否则为物理删除</para>
+            eg:UserInfoBLL.Instance.DelByKeys(1,2,3);
+            </summary>
+            <param name="keys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Del(System.String,System.Object[],ORM.FieldAttributeCollection,System.Collections.Generic.ICollection{System.String})">
+            <summary>
+            cacheName用来定义命令参数缓存(不会清除数据缓存)
+            </summary>
+            <param name="cacheName"></param>
+            <param name="objs"></param>
+            <param name="fields"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Conditions">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.StateCondition">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Conditions(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="delState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.QueryPrams">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.DALFields">
+            <summary>
+            获取实体的所有数据库字段集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Cache(System.String)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="cacheName">缓存名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Cache(System.Text.StringBuilder)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="cacheName">缓存名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.CopyQuery">
+            <summary>
+            创建一个新的Query对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Where(System.String[])">
+            <summary>
+            <para>设置查询条件</para>
+            Eg: BLL&lt;Comment&gt;.Query q = CommentBLL.Instance.Where("userName=@userName").Parms("张三");
+            </summary>
+            <param name="conditions">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.In(System.String,System.Object[])">
+            <summary>
+            按field的多个值获取
+            </summary>
+            <param name="field">字段名称</param>
+            <param name="data">过滤数据的值的集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.OrderBy(System.String)">
+            <summary>
+            排序条件
+            </summary>
+            <param name="orderby">排序关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.ExistJoin(ORM.IQuery,System.String)">
+            <summary>
+            联表查询
+            </summary>
+            <param name="query">联接对象</param>
+            <param name="on">联表条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.ViewCacheKey(System.Object[])">
+            <summary>
+            拼写View缓存键名
+            </summary>
+            <param name="keys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.ClearViewCache(System.Object[])">
+            <summary>
+            清除View缓存
+            </summary>
+            <param name="keys"></param>
+        </member>
+        <member name="M:ORM.BLL`1.ClearViewCache(System.Boolean,System.Object[])">
+            <summary>
+            清除View缓存
+            </summary>
+            <param name="state">是否操作</param>
+            <param name="keys"></param>
+        </member>
+        <member name="P:ORM.BLL`1.viewCacheTime">
+            <summary>
+            单条查询的缓存设置
+            </summary>
+        </member>
+        <member name="P:ORM.BLL`1.viewCacheEnable">
+            <summary>
+            是否开启默认ViewByKeys的缓存
+            </summary>
+        </member>
+        <member name="P:ORM.BLL`1.viewCacheAutoClear">
+            <summary>
+            是否开启数据变更联动清除缓存
+            </summary>
+        </member>
+        <member name="P:ORM.BLL`1.listCacheTime">
+            <summary>
+            查询列表的缓存设置
+            </summary>
+        </member>
+        <member name="P:ORM.BLL`1.countCacheTime">
+            <summary>
+            查询统计的缓存设置
+            </summary>
+        </member>
+        <member name="P:ORM.BLL`1.Cacher">
+            <summary>
+            缓存管理对象
+            </summary>
+        </member>
+        <member name="P:ORM.BLL`1.cacheInstance">
+            <summary>
+            缓存实例(前缀)
+            </summary>
+        </member>
+        <member name="P:ORM.BLL`1.defOrderBy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ORM.BLL`1.table">
+            <summary>
+            获取查询操作的表名
+            </summary>
+        </member>
+        <member name="T:ORM.BLL`1.Query">
+            <summary>
+            数据表查询对象
+            </summary>
+        </member>
+        <member name="M:ORM.BLL`1.Query.#ctor">
+            <summary>
+            获取Query的实例
+            </summary>
+        </member>
+        <member name="F:ORM.BLL`1.Query._conditions">
+            <summary>
+            查询条件
+            </summary>
+        </member>
+        <member name="M:ORM.BLL`1.Query.Conditions">
+            <summary>
+            查询条件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.StateCondition">
+            <summary>
+            逻辑删除条件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.DALFields">
+            <summary>
+            涉及数据库字段
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.Conditions(System.Boolean)">
+            <summary>
+            获取条件
+            </summary>
+            <param name="delState">是否包含逻辑删除字段</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.CheckCacheName">
+            <summary>
+            缓存名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.DisableCache">
+            <summary>
+            禁用数据缓存
+            </summary>
+        </member>
+        <member name="M:ORM.BLL`1.Query.checkPrams">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.QueryPrams">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.Order">
+            <summary>
+            排序
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ORM.BLL`1.Query._bll">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ORM.BLL`1.Query.Bll">
+            <summary>
+            获取业务逻辑对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.Cache(System.Text.StringBuilder)">
+            <summary>
+            设置缓存
+            </summary>
+            <param name="cacheName">缓存名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.CopyQuery">
+            <summary>
+            复制查询对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.Parms(System.Object[])">
+            <summary>
+            参数列表
+            </summary>
+            <param name="prams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.Where(System.String[])">
+            <summary>
+            重新设置查询条件(清空参数Parms列表)
+            </summary>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.And(System.String[])">
+            <summary>
+            增加查询条件
+            </summary>
+            <param name="conditions">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.In(System.String,System.Object[])">
+            <summary>
+            按field的多个值获取
+            </summary>
+            <param name="field"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.OrderBy(System.String)">
+            <summary>
+            排序条件
+            </summary>
+            <param name="orderby">排序字段</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.ExistJoin(ORM.IQuery,System.String)">
+            <summary>
+            联表查询
+            </summary>
+            <param name="query">联接对象</param>
+            <param name="on">联表条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.getColumn0(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.getColumns0(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.get0">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.list0(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="num"></param>
+            <param name="start"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.list0(System.Collections.Generic.List{`0},System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="list"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.listAll0">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.listColumns0(System.Int32,System.Int32,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="num"></param>
+            <param name="start"></param>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.listColumnsAll0(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.groupList0(System.String[],System.String[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="by"></param>
+            <param name="columns"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.groupAll0(System.String[],System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="by"></param>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.groupCount0(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="by"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.count0">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.GetColumn(System.String)">
+            <summary>
+            获取一列(一行)
+            </summary>
+            <param name="columnName">列名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.GetColumns(System.String[])">
+            <summary>
+            获取多列(一行)
+            </summary>
+            <param name="columns">列名数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.Get">
+            <summary>
+            获取一条数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.List(System.Int32,System.Int32)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="num">列表条数</param>
+            <param name="start">从start条开始</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.List0(System.Int32,System.Int32)">
+            <summary>
+            分页获取
+            </summary>
+            <param name="page">页数</param>
+            <param name="size">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.List(System.Collections.Generic.List{`0},System.Int32,System.Int32)">
+            <summary>
+            获取列表及总数
+            </summary>
+            <param name="list">接收数据的列表</param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <returns>总数</returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.List0(System.Collections.Generic.List{`0},System.Int32,System.Int32)">
+            <summary>
+            获取列表及总数
+            </summary>
+            <param name="list">接收数据的列表</param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.listKeyIndex0(System.Object[])">
+            <summary>
+            获取当前值所在位置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.ListKeyIndex(System.Object[])">
+            <summary>
+            获取当前值所在位置
+            </summary>
+            <param name="keys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.ListAll">
+            <summary>
+            获取列表(符合条件的所有数据,慎用)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.ListColumns(System.Int32,System.Int32,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="num"></param>
+            <param name="start"></param>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.ListColumnsAll(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.GroupList(System.String[],System.String[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="by"></param>
+            <param name="columns"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.GroupAll(System.String[],System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="by"></param>
+            <param name="columns"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.GroupCount(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="by"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.Count">
+            <summary>
+            获取数据总条数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.GetCacheName(System.String,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="op"></param>
+            <param name="cacheName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.GetListCacheName(System.String,System.Int32,System.Int32,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="op"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <param name="cacheName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.Update(System.String,System.Object[])">
+            <summary>
+            修改
+            </summary>
+            <param name="statement">修改列表(SET子句)</param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.Query.Del">
+            <summary>
+            删除
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ORM.BLL`1.Query.table">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="M:ORM.BLL`1.JoinQuery.CopyQuery">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.BLL`1.JoinQuery.ExistJoin(ORM.IQuery,System.String)">
+            <summary>
+            联表查询
+            </summary>
+            <param name="query">联接对象</param>
+            <param name="on">联表条件</param>
+            <returns></returns>
+        </member>
+        <member name="T:ORM.ORMFieldType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ORM.ORMFieldType.None">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ORM.ORMFieldType.Key">
+            <summary>
+            主键之一
+            </summary>
+        </member>
+        <member name="F:ORM.ORMFieldType.Identity">
+            <summary>
+            自增列
+            </summary>
+        </member>
+        <member name="F:ORM.ORMFieldType.Unique">
+            <summary>
+            唯一列
+            </summary>
+        </member>
+        <member name="T:ORM.DbFieldAttribute">
+            <summary>
+            标记数据库字段及字段类型、键、索引等属性
+            </summary>
+        </member>
+        <member name="M:ORM.DbFieldAttribute.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:ORM.DbFieldAttribute.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <param name="len"></param>
+        </member>
+        <member name="M:ORM.DbFieldAttribute.GetDbType">
+            <summary>
+            确认数据库类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.DbFieldAttribute.GetNames(ORM.FieldAttributeCollection)">
+            <summary>
+            获取数据库字段名
+            </summary>
+            <param name="attributes"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ORM.DbFieldAttribute.Name">
+            <summary>
+            数据库字段名
+            </summary>
+        </member>
+        <member name="P:ORM.DbFieldAttribute.Type">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="P:ORM.DbFieldAttribute.SqlType">
+            <summary>
+            sql语句类型(含长度)
+            </summary>
+        </member>
+        <member name="P:ORM.DbFieldAttribute.Len">
+            <summary>
+            字段长度
+            </summary>
+        </member>
+        <member name="P:ORM.DbFieldAttribute.ORMType">
+            <summary>
+            字段类型
+            </summary>
+        </member>
+        <member name="P:ORM.DbFieldAttribute.DbType">
+            <summary>
+            .net数据库类型
+            </summary>
+        </member>
+        <member name="T:ORM.FieldAttributeCollection">
+            <summary>
+            数据库字段集合类
+            </summary>
+        </member>
+        <member name="M:ORM.FieldAttributeCollection.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ORM.FieldAttributeCollection.#ctor(System.Collections.Generic.IEnumerable{ORM.DbFieldAttribute})">
+            <summary>
+            复制为新的集合
+            </summary>
+            <param name="list0"></param>
+        </member>
+        <member name="M:ORM.FieldAttributeCollection.GetKeyForItem(ORM.DbFieldAttribute)">
+            <summary>
+            Name属性为主键
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.FieldAttributeCollection.TryGetByName(System.String,ORM.DbFieldAttribute@)">
+            <summary>
+            尝试按名称获取字段
+            </summary>
+            <param name="name"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.FieldAttributeCollection.TryAdd(ORM.DbFieldAttribute)">
+            <summary>
+            尝试添加(重名就不再添加)
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:ORM.FieldAttributeCollection.Names">
+            <summary>
+            所有属性名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ORM.GetDb">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ORM.Repository">
+            <summary>
+            公共方法
+            </summary>
+        </member>
+        <member name="F:ORM.Repository.Log">
+            <summary>
+            记录日志
+            </summary>
+        </member>
+        <member name="F:ORM.Repository.ORMSqlTrack">
+            <summary>
+            是否记录所有sql
+            </summary>
+        </member>
+        <member name="M:ORM.Repository.Exec(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.Collections.Hashtable,System.String,System.String,ORM.FieldAttributeCollection,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="db"></param>
+            <param name="cache"></param>
+            <param name="sql"></param>
+            <param name="cacheName"></param>
+            <param name="fields"></param>
+            <param name="objects"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.ExecScalar(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.Collections.Hashtable,System.String,System.String,ORM.FieldAttributeCollection,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="db"></param>
+            <param name="cache"></param>
+            <param name="sql"></param>
+            <param name="cacheName"></param>
+            <param name="fields"></param>
+            <param name="objs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.ExecScalar(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.Collections.Hashtable,System.String,System.String,ORM.FieldAttributeCollection,System.String[],System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="db"></param>
+            <param name="cache"></param>
+            <param name="sql"></param>
+            <param name="cacheName"></param>
+            <param name="fields"></param>
+            <param name="columns"></param>
+            <param name="objs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.Get(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.Collections.Hashtable,System.String,System.String,ORM.FieldAttributeCollection,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="db"></param>
+            <param name="cache"></param>
+            <param name="sql"></param>
+            <param name="cacheName"></param>
+            <param name="fields"></param>
+            <param name="objects"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.List(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.Collections.Hashtable,System.String,System.String,ORM.FieldAttributeCollection,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="db"></param>
+            <param name="cache"></param>
+            <param name="sql"></param>
+            <param name="cacheName"></param>
+            <param name="fields"></param>
+            <param name="objs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.GetCachedParameters(System.Collections.Hashtable,System.String)">
+            <summary>
+            从缓存中获取参数列表
+            </summary>
+            <param name="parmCache"></param>
+            <param name="cacheKey">缓存键</param>
+            <returns>Cached SqlParamters array</returns>
+        </member>
+        <member name="M:ORM.Repository.CheckFields(ORM.FieldAttributeCollection,System.String[],System.Collections.Generic.ICollection{ORM.DbFieldAttribute})">
+            <summary>
+            
+            </summary>
+            <param name="fields"></param>
+            <param name="names"></param>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.FindFiledName(System.String,System.Int32)">
+            <summary>
+            获取最近位置的字段名
+            </summary>
+            <param name="sql"></param>
+            <param name="index">当前位置</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.CreateParameters(System.Data.Common.DbCommand,ORM.FieldAttributeCollection,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="cmd"></param>
+            <param name="fields"></param>
+            <param name="names"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.GetCacheKey(System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="op"></param>
+            <param name="objs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.CheckOp(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.GetListCaheName(System.String,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="op"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.GetListParmsObjs(System.Object[],System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="objs0"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.GetCacheName(System.String,System.String,System.Object[],System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="prefix"></param>
+            <param name="op"></param>
+            <param name="parmObjs"></param>
+            <param name="cacheName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.GetListCacheName(System.String,System.String,System.Object[],System.Int32,System.Int32,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="prefix"></param>
+            <param name="op"></param>
+            <param name="parmObjs"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <param name="cacheName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.GetOPCacheName(System.String,System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="prefix"></param>
+            <param name="op"></param>
+            <param name="parmObjs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Repository.ListCacheName(System.Text.StringBuilder,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="sb"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+        </member>
+        <member name="M:ORM.Repository.CheckCacheKey(System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="prefix"></param>
+            <param name="objs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ORM.FixDescriptorCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ORM.FixDescriptorCollection.#ctor(System.Collections.Generic.IEnumerable{ORM.FixDescriptor})">
+            <summary>
+            复制为新的集合
+            </summary>
+            <param name="list0"></param>
+        </member>
+        <member name="M:ORM.FixDescriptorCollection.GetKeyForItem(ORM.FixDescriptor)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.FixDescriptorCollection.TryGetByName(System.String,ORM.FixDescriptor@)">
+            <summary>
+            尝试按名称获取
+            </summary>
+            <param name="name"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.FixDescriptorCollection.AddAndReplace(ORM.FixDescriptor)">
+            <summary>
+            添加并覆盖
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="T:ORM.IView">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ORM.IView.Fix">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ORM.IView.Item(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ORM.IView.ObjType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ORM.View`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:ORM.View`1.Fix">
+            <summary>
+            固化属性
+            </summary>
+        </member>
+        <member name="M:ORM.View`1.ReadValue(System.String)">
+            <summary>
+            读取属性值
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ORM.View`1.Obj">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ORM.View`1.ObjType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ORM.View`1.Item(System.String)">
+            <summary>
+            属性索引器
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="F:ORM.MapTo`1.Fields">
+            <summary>
+            没有标记为忽略(Ignore)的可写属性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.MapTo`1.Emit(ORM.Field{`0})">
+            <summary>
+            单个属性写方法
+            </summary>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.MapTo`1.Emit(ORM.FieldCollection{`0})">
+            <summary>
+            多个属性写方法
+            </summary>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ORM.MapTo`1.Names">
+            <summary>
+            没有标记为忽略(Ignore)的写属性
+            </summary>
+        </member>
+        <member name="T:ORM.FilterAttribute">
+            <summary>
+            数据过滤(使用ORM写数据时)
+            </summary>
+        </member>
+        <member name="M:ORM.FilterAttribute.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ORM.FilterAttribute.filter">
+            <summary>
+            数据过滤的方法
+            </summary>
+        </member>
+        <member name="M:ORM.FilterAttribute.Check(System.Object)">
+            <summary>
+            过滤
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ORM.SqlServer">
+            <summary>
+            SqlServer数据库的Sql语句拼接
+            </summary>
+        </member>
+        <member name="M:ORM.SqlServer.ViewSql(System.String,System.String[],System.String[])">
+            <summary>
+            单条数据的sql拼写
+            </summary>
+            <param name="table"></param>
+            <param name="conditions"></param>
+            <param name="fileds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.ListAllSql(System.String,System.String,System.String,System.String[])">
+            <summary>
+            符合条件的所有行的sql拼写
+            </summary>
+            <param name="table"></param>
+            <param name="fileds"></param>
+            <param name="orderby"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.ListAllSql(System.String,System.String[],System.String,System.String[])">
+            <summary>
+            符合条件的所有行的sql拼写
+            </summary>
+            <param name="table"></param>
+            <param name="fileds"></param>
+            <param name="orderby"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.ListTopSql(System.String,System.String,System.String,System.Int32,System.String[])">
+            <summary>
+            符合条件的前num行的sql拼写
+            </summary>
+            <param name="table"></param>
+            <param name="fileds"></param>
+            <param name="orderby"></param>
+            <param name="num"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.ListTopSql(System.String,System.String[],System.String,System.Int32,System.String[])">
+            <summary>
+            符合条件的前num行的sql拼写
+            </summary>
+            <param name="table"></param>
+            <param name="fileds"></param>
+            <param name="orderby"></param>
+            <param name="num"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.ListSql(System.String,System.Collections.Generic.ICollection{ORM.DbFieldAttribute},System.String,System.String,System.Int32,System.Int32,System.String[])">
+            <summary>
+            分页sql拼写
+            </summary>
+            <param name="table"></param>
+            <param name="keys"></param>
+            <param name="fileds"></param>
+            <param name="orderby"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.ListKeyIndexSql(System.String,System.String[],System.String,System.String,System.String[])">
+            <summary>
+            必须有主键且输入排序
+            </summary>
+            <param name="table"></param>
+            <param name="keys"></param>
+            <param name="orderby"></param>
+            <param name="keysCondition"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.ListSqlWithOutKey(System.String,System.String,System.String,System.Int32,System.Int32,System.String[])">
+            <summary>
+            没有设置主键的分页sql拼写
+            </summary>
+            <param name="table"></param>
+            <param name="fileds"></param>
+            <param name="orderby"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.ListSqlWithOutOrder(System.String,System.Collections.Generic.ICollection{ORM.DbFieldAttribute},System.String,System.Int32,System.Int32,System.String[])">
+            <summary>
+            没有设置排序,但设置了主键的分页sql拼写
+            </summary>
+            <param name="table"></param>
+            <param name="keys"></param>
+            <param name="fileds"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.GroupListSql(System.String,System.String[],System.String[],System.String,System.Int32,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="table"></param>
+            <param name="fileds"></param>
+            <param name="by"></param>
+            <param name="orderby"></param>
+            <param name="num"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.GroupAllSql(System.String,System.String[],System.String[],System.String,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="table"></param>
+            <param name="fileds"></param>
+            <param name="by"></param>
+            <param name="orderby"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.GroupListSql(System.String,System.Collections.Generic.ICollection{ORM.DbFieldAttribute},System.String[],System.String[],System.String,System.Int32,System.Int32,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="table"></param>
+            <param name="keys"></param>
+            <param name="fileds"></param>
+            <param name="by"></param>
+            <param name="orderby"></param>
+            <param name="num"></param>
+            <param name="start"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.CountSql(System.String,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="table"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.GroupCoutSql(System.String,System.String[],System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="table"></param>
+            <param name="by"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.UpdateSql(System.String,System.String,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="table"></param>
+            <param name="statement"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.DelSql(System.String,System.String,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="table"></param>
+            <param name="delField"></param>
+            <param name="condition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.AddSql(System.String,System.String[],System.String)">
+            <summary>
+            
+            </summary>
+            <param name="table"></param>
+            <param name="fields"></param>
+            <param name="returnSql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.SqlServer.listKey(ORM.DbFieldAttribute,System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String})">
+            <summary>
+            临时表连表实现分页
+            </summary>
+            <param name="key"></param>
+            <param name="listDeclare"></param>
+            <param name="listKeys"></param>
+            <param name="listTmpKeys"></param>
+            <param name="listCondition"></param>
+        </member>
+        <member name="M:ORM.SqlServer.listKey(ORM.DbFieldAttribute,System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String})">
+            <summary>
+            cte连表实现分页
+            </summary>
+            <param name="key"></param>
+            <param name="listDeclare"></param>
+            <param name="listCondition"></param>
+        </member>
+        <member name="M:ORM.SqlServer.CheckWhere(System.Text.StringBuilder,System.String[])">
+            <summary>
+            拼接Where子句
+            </summary>
+            <param name="sql">查询语句的Select子句</param>
+            <param name="conditions">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="T:ORM.IndexField`1">
+            <summary>
+            索引器信息类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:ORM.IndexField`1.Index">
+            <summary>
+            索引器
+            </summary>
+        </member>
+        <member name="F:ORM.IndexField`1.Fields">
+            <summary>
+            所有公开的示例字段和属性
+            </summary>
+        </member>
+        <member name="M:ORM.IndexField`1.#ctor">
+            <summary>
+            保护(避免无参实例化)
+            </summary>
+        </member>
+        <member name="F:ORM.IndexField`1._member">
+            <summary>
+            索引器属性
+            </summary>
+        </member>
+        <member name="F:ORM.IndexField`1._memberType">
+            <summary>
+            索引器属性的类型
+            </summary>
+        </member>
+        <member name="F:ORM.IndexField`1._getter">
+            <summary>
+            读索引器的方法
+            </summary>
+        </member>
+        <member name="M:ORM.IndexField`1.Getter">
+            <summary>
+            读索引器的方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.IndexField`1.Read(`0,System.String)">
+            <summary>
+            读取索引器的值(优先读取属性)
+            </summary>
+            <param name="obj"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.IndexField`1.GetIndex">
+            <summary>
+            获取索引器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ORM.IndexField`1.MemberType">
+            <summary>
+            索引器属性的类型
+            </summary>
+        </member>
+        <member name="T:ORM.IndexArray`1">
+            <summary>
+            数组信息类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:ORM.IndexArray`1.GetFields">
+            <summary>
+            数组不取属性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ORM.Wrapper`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:ORM.Wrapper`1.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ORM.Wrapper`1.Wrap(ORM.Wrapper{`0},System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            使用wrapper封装对象列表
+            </summary>
+            <param name="wrapper"></param>
+            <param name="list0"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Wrapper`1.Wrap(ORM.Wrapper{`0},`0)">
+            <summary>
+            使用wrapper封装单个对象
+            </summary>
+            <param name="wrapper"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Wrapper`1.Wrap(`0)">
+            <summary>
+            封装单个对象
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Wrapper`1.Wrap(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            封装对象列表
+            </summary>
+            <param name="list0"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORM.Wrapper`1.Custom(System.String,System.String,FunLayer.Func{System.String,System.Object})">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="name"></param>
+            <param name="fun"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.Custom(System.String,System.String,FunLayer.Func{System.Object,System.Object})">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="name"></param>
+            <param name="fun"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.Custom(System.String,FunLayer.Func{`0,System.Object})">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="fun"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.Cut(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="name"></param>
+            <param name="len"></param>
+            <param name="add"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.Cut(System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="name"></param>
+            <param name="len"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.Color(System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="name"></param>
+            <param name="item"></param>
+            <param name="color"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.Red(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="name"></param>
+            <param name="item"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.Color(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="name"></param>
+            <param name="color"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.Red(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.FixCustom(System.String,FunLayer.Func{FunLayer.Func{System.Object}})">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="fun"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.FixBool(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="trueStr"></param>
+            <param name="falseStr"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.FixBool(System.String,FunLayer.Func{System.Boolean,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="fun"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.FixNum(System.String,FunLayer.Func{System.Int32,System.String},System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="fun"></param>
+            <param name="begin"></param>
+            <param name="step"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.Count(System.String,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="begin"></param>
+            <param name="step"></param>
+        </member>
+        <member name="M:ORM.Wrapper`1.Count(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="showName"></param>
+            <param name="begin"></param>
+        </member>
+    </members>
+</doc>

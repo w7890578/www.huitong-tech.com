@@ -1,0 +1,143 @@
+﻿@model Business.CompanyInfo
+@{
+    Layout = null;
+}
+
+<div class="topheader">
+    <div class="left">
+        <h1 class="logo">天津慧通科技有限责任公司.<span>网站后台</span></h1>
+        <span class="slogan">后台管理系统</span>
+
+        <div class="search">
+            @*<form action="" method="post">
+                	<input type="text" name="keyword" id="keyword" value="请输入" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+                    <button class="submitbutton"></button>
+                </form>*@
+        </div>
+        <!--search-->
+
+        <br clear="all">
+    </div>
+    <!--left-->
+
+    <div class="right">
+        <!--<div class="notification">
+                <a class="count" href="ajax/notifications.html"><span>9</span></a>
+        	</div>-->
+        <div class="userinfo">
+            <img src="../../Plug/AmaAdmin/images/thumbs/avatar.png" alt="">
+            <span>管理员</span>
+        </div>
+        <!--userinfo-->
+
+        <div class="userinfodrop">
+            <div class="avatar">
+                <a href="">
+                    <img src="../../Plug/AmaAdmin/images/thumbs/avatarbig.png" alt=""></a>
+                <div class="changetheme">
+                    切换主题:
+                            <br>
+                    <a class="default"></a>
+                    <a class="blueline"></a>
+                    <a class="greenline"></a>
+                    <a class="contrast"></a>
+                    <a class="custombg"></a>
+                </div>
+            </div>
+            <!--avatar-->
+            <div class="userdata">
+                <h4>@Model.ContactUserName</h4>
+                <span class="email">@Model.Email</span>
+                <ul>
+                    <li><a href="/Admin/CompanyInfo">编辑资料</a></li>
+                    <li><a href="/Admin/CompanyInfo">账号设置</a></li>
+                    <li><a href="/Admin/Main">帮助</a></li>
+                    <li><a href="/Admin">退出</a></li>
+                </ul>
+            </div>
+            <!--userdata-->
+        </div>
+        <!--userinfodrop-->
+    </div>
+    <!--right-->
+</div>
+<!--topheader-->
+
+
+<div class="header">
+    <ul class="headermenu">
+        <li class="current"><a href="###"><span class="icon icon-flatscreen"></span>首页</a></li>
+        @*<li><a href="###"><span class="icon icon-pencil"></span>博客管理</a></li>*@
+        <li><a href="###"><span class="icon icon-message"></span>查看消息</a></li>
+        <li><a href="###"><span class="icon icon-chart"></span>统计报表</a></li>
+    </ul>
+
+    <div class="headerwidget">
+        @* <div class="earnings">
+                    <div class="one_half">
+                        <h4>Today's Earnings</h4>
+                        <h2>$640.01</h2>
+                    </div>
+                    <!--one_half-->
+                    <div class="one_half last alignright">
+                        <h4>Current Rate</h4>
+                        <h2>53%</h2>
+                    </div>
+                    <!--one_half last-->
+                </div>*@
+        <!--earnings-->
+    </div>
+    <!--headerwidget-->
+
+</div>
+<!--header-->
+
+<div class="vernav2 iconmenu">
+    <ul>
+        @* <li><a href="#formsub" class="editor">表单提交</a>
+                    <span class="arrow"></span>
+                    <ul id="formsub">
+                        <li><a href="forms.html">基础表单</a></li>
+                        <li><a href="wizard.html">表单验证</a></li>
+                        <li><a href="editor.html">编辑器</a></li>
+                    </ul>
+                </li>*@
+        <!--<li><a href="filemanager.html" class="gallery">文件管理</a></li>-->
+
+        <li><a href="/Admin/ArticleMain" class="elements">栏目管理</a></li>
+        <li><a href="/Admin/Article?ParentID=1" class="elements">机床联网产品</a></li>
+        <li><a href="/Admin/Article?ParentID=2" class="widgets">整体解决方案</a></li>
+        <li><a href="/Admin/Article?ParentID=3" class="calendar">体验下载</a></li>
+        <li><a href="/Admin/Article?ParentID=4" class="support">服务支持</a></li>
+        <li><a href="/Admin/Article?ParentID=7" class="tables">新闻中心</a></li>
+        <li><a href="/Admin/Article?ParentID=5" class="typo">合作伙伴</a></li>
+        <li><a href="/Admin/Article?ParentID=6" class="tables">关于我们</a></li>
+
+        @* <li><a href="/Admin/CompanyInfo" class="addons">公司基本信息</a></li>*@
+        @*<li><a href="buttons.html" class="buttons">按钮 &amp; 图标</a></li>
+                <li><a href="#error" class="error">错误页面</a>
+                    <span class="arrow"></span>
+                    <ul id="error">
+                        <li><a href="notfound.html">404错误页面</a></li>
+                        <li><a href="forbidden.html">403错误页面</a></li>
+                        <li><a href="internal.html">500错误页面</a></li>
+                        <li><a href="offline.html">503错误页面</a></li>
+                    </ul>
+                </li>
+                <li><a href="#addons" class="addons">其他页面</a>
+                    <span class="arrow"></span>
+                    <ul id="addons">
+                        <li><a href="newsfeed.html">新闻订阅</a></li>
+                        <li><a href="profile.html">资料页面</a></li>
+                        <li><a href="productlist.html">产品列表</a></li>
+                        <li><a href="photo.html">图片视频分享</a></li>
+                        <li><a href="gallery.html">相册</a></li>
+                        <li><a href="invoice.html">购物车</a></li>
+                    </ul>
+                </li>*@
+    </ul>
+    <a class="togglemenu"></a>
+    <br>
+    <br>
+</div>
+<!--leftmenu-->

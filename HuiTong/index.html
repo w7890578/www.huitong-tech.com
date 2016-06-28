@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+         window.location.href = "/Home";
+
+    </script>
+    <form action="/Admin/CooperationAdd" method="post" target="_blank">
+        <table style="width: 100%;">
+            <tr>
+                <td>真实姓名：<input type="text" name="UserName" /></td>
+            </tr>
+            <tr>
+                <td>公司名称：<input type="text" name="CompanyName" /></td>
+            </tr>
+            <tr>
+                <td>部门职务：<input type="text" name="Position" /></td>
+            </tr>
+            <tr>
+                <td>联系电话：<input type="text" name="Mobile" /></td>
+            </tr>
+            <tr>
+                <td>电子邮箱：<input type="text" name="Email" /></td>
+            </tr>
+            <tr>
+                <td>QQ号码：<input type="text" name="QQ" /></td>
+            </tr>
+            <tr>
+                <td>合作意向类型：
+                <input type="radio" name="Type" value="1" />成为战略合作伙伴&nbsp;&nbsp;
+             <input type="radio" name="Type" value="2" />成为地区代理商&nbsp;&nbsp;
+                 <input type="radio" name="Type" value="3" />成为项目合作伙伴&nbsp;&nbsp;    
+                </td>
+            </tr>
+            <tr>
+                <td>合作意向产品：<input type="checkbox" name="Product" value="1" />机床联网&nbsp;&nbsp; 
+                <input type="checkbox" name="Product" value="2" />程序管理&nbsp;&nbsp; 
+                <input type="checkbox" name="Product" value="3" />联网监控&nbsp;&nbsp; 
+                <input type="checkbox" name="Product" value="4" />其它&nbsp;&nbsp; 
+                </td>
+            </tr>
+            <tr>
+                <td>合作优势：<input type="text" name="Advantage" /></td>
+            </tr>
+            <tr>
+                <td>您是如何知道慧通的：<input type="radio" name="Know" value="1" />官方网站&nbsp;&nbsp;
+                <input type="radio" name="Know" value="2" />网络搜索&nbsp;&nbsp;
+                <input type="radio" name="Know" value="3" />微信媒体&nbsp;&nbsp;
+                <input type="radio" name="Know" value="4" />朋友推荐&nbsp;&nbsp;
+                <input type="radio" name="Know" value="5" />电子邮件&nbsp;&nbsp;
+                <input type="radio" name="Know" value="6" />销售人员&nbsp;&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>其他特殊合作意向产品或服务需求概述：<input type="text" name="Remark" /></td>
+            </tr>
+
+        </table>
+        <input type="submit" value="提  交" />
+    </form>
+</body>
+</html>

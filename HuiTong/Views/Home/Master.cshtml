@@ -1,0 +1,298 @@
+﻿@model List<Business.Article>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="IE=10.000"
+        http-equiv="X-UA-Compatible">
+    <title>天津慧通科技有限责任公司</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="天津慧通科技有限责任公司">
+    <meta name="description" content="天津慧通科技有限责任公司">
+    <meta name="author" content="Andy-Du">
+    <link href="gywm_files/css.css" rel="stylesheet" type="text/css">
+    <link href="index_files/css.css" rel="stylesheet" type="text/css">
+    <script language="javascript" src="gywm_files/AC_RunActiveContent.js"></script>
+
+    <script language="javascript" src="gywm_files/swfobject.js"></script>
+
+    <script src="gywm_files/jquery.js" type="text/javascript"></script>
+
+    <script src="gywm_files/jqueryslidemenu.js" type="text/javascript"></script>
+
+    <script language="javascript" src="gywm_files/MSClass.js"></script>
+
+    <script src="gywm_files/swfobject(1).js" type="text/javascript"></script>
+
+    <script language="javascript" src="" type="text/javascript"></script>
+
+    <script src="gywm_files/common.js" type="text/javascript"></script>
+
+    <meta name="GENERATOR" content="MSHTML 10.00.9200.16384">
+</head>
+<body>
+    <div class="headerdu" style='background: url(&quot;images/cx.jpg&quot;) repeat-x top rgb(255, 255, 255); margin: 0px auto; max-width: 1160px;'>
+        <!-- #BeginLibraryItem "/Library/index menu top.lbi" -->
+        <div class="logo">
+            <div style="width: 200px; float: left;">
+                <a href="/Home">
+                    <img
+                        width="188" height="63" alt="" src="index_files/cx_03.jpg" border="0"></a>
+            </div>
+            <div id="header">
+                <div class="jqueryslidemenu" id="myslidemenu">
+                    <ul>
+                        <li><a href="/Home">首页</a></li>
+                        @foreach (var item in Model)
+                        {
+                            if (item.ParentID == 0)
+                            {
+                            <li><a href="/@item.Text?ParentID=@item.ID">@item.Title</a>
+                                <ul>
+                                    @foreach (var itemChildren in Business.BLL.ArticleBLL.Instance.Where("ParentID=@ParentID").Parms(item.ID).OrderBy("Sort Asc").ListAll())
+                                    {
+                                        <li><a href="/@item.Text/Detail?ID=@item.ID">@item.Title</a></li>
+                                    }
+                                </ul>
+                            </li>
+                            }
+                        }
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <!-- #EndLibraryItem -->
+        <!-- #BeginLibraryItem "/Library/sousuo.lbi" -->
+        <div style="margin: 0px auto; width: 963px; height: 43px;">
+            <div style="width: 210px; margin-top: 2px; margin-right: 5px; float: right; display: block; border: 1px solid #ececec">
+                <script language="JavaScript" type="text/javascript">
+                    function search_OnSubmit() {
+                        var KeyWord = get("KeyWord").value;
+                        if (KeyWord <= 1) { alert("输入产品名称进行搜索"); return false; }
+                    }
+                </script>
+
+                <form style="margin: 0px; padding: 0px;" onsubmit="javascript:return search_OnSubmit(this);"
+                    action="/List" method="get">
+                    <table width="210" height="25" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td width="184" height="25" style='padding-left: 5px; background-image: url(&quot;images/cx_09.jpg&quot;); background-repeat: no-repeat;'>
+                                    <input
+                                        name="KeyWord" class="input1" id="KeyWord" onfocus="if (this.value=='输入产品名称进行搜索') this.value='';"
+                                        type="text" value="输入产品名称进行搜索"></td>
+                                <td width="26" align="center">
+                                    <input name="submit" align="absmiddle" type="image"
+                                        src="index_files/cx_10.jpg"
+                                        img="img"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <!-- #EndLibraryItem -->
+        <div style="clear: both;"></div>
+        <div class="cnen">
+            <img src="index_files/cen_bg.jpg" width="963" height="38" />
+        </div>
+        <div class="bannarspicus">
+            <img width="963" height="200"
+                src="gywm2_files/so.jpg">
+        </div>
+        <div class="maintext">
+            @RenderBody()
+        </div>
+        <div style="clear: both;"></div>
+        <!-- #BeginLibraryItem "/Library/down.lbi" -->
+        <div style="margin: 20px auto; height: 60px; max-width: 1160px; background-color: rgb(25, 25, 25);">
+            <div class="footer">
+                天津慧通科技有限责任公司 侵权必究
+    <!--| <A style="color: rgb(204, 204, 204);" 
+href="#" target="_blank">闽ICP备11018880号-2</A>-->
+                <script language="JavaScript" src="index_files/stat.js"></script>
+                <br>
+                <img width="258" height="33" alt=""
+                    src="index_files/cx_42.jpg">
+            </div>
+        </div>
+        <!-- #EndLibraryItem -->
+    </div>
+    <div id="xixi" onmouseover="toBig()" onmouseout="toSmall()">
+        <table width="157" style="float: left;" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td height="39" class="main_head" valign="top">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="info" valign="top">
+                        <table width="120" align="center" class="qqtable" border="0" cellspacing="0"
+                            cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td align="middle">
+                                        <img width="110" height="60" src="index_files/kefu_head.jpg"
+                                            border="0" /></td>
+                                </tr>
+                                <tr>
+                                    <td height="5"></td>
+                                </tr>
+                                <tr>
+                                    <td height="5" align="center"
+                                        style="font-size: 11px;">客服QQ1:2284865062</td>
+                                </tr>
+                                <tr>
+                                    <td height="38" align="center" valign="top"
+                                        style="font-size: 12px;"><a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=2284865062&amp;Site=厦门信达物联科技有限公司&amp;Menu=yes"
+                                            target="_blank">
+                                            <img alt="点击这里给我发送消息" src="gywm_files/button_old_11.gif"
+                                                border="0"></a></td>
+                                </tr>
+                                <tr>
+                                    <td height="5" align="center"
+                                        style="font-size: 11px;">客服QQ2:6556466</td>
+                                </tr>
+                                <tr>
+                                    <td height="38" align="center" valign="top"
+                                        style="font-size: 12px;"><a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=6556466&amp;Site=厦门信达物联科技有限公司&amp;Menu=yes"
+                                            target="_blank">
+                                            <img alt="点击这里给我发送消息" src="gywm_files/button_old_11(1).gif"
+                                                border="0"></a></td>
+                                </tr>
+                                <tr>
+                                    <td height="5" align="center"
+                                        style="font-size: 11px;">客服QQ3:763708755</td>
+                                </tr>
+                                <tr>
+                                    <td height="38" align="center" valign="top"
+                                        style="font-size: 12px;"><a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=763708755&amp;Site=厦门信达物联科技有限公司&amp;Menu=yes"
+                                            target="_blank">
+                                            <img alt="点击这里给我发送消息" src="gywm_files/button_old_11(2).gif"
+                                                border="0"></a></td>
+                                </tr>
+                                <tr>
+                                    <td height="5" align="center"
+                                        style="font-size: 11px;">客服QQ4:5520551</td>
+                                </tr>
+                                <tr>
+                                    <td height="38" align="center" valign="top"
+                                        style="font-size: 12px;"><a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=5520551&amp;Site=厦门信达物联科技有限公司&amp;Menu=yes"
+                                            target="_blank">
+                                            <img alt="点击这里给我发送消息" src="gywm_files/button_old_11(3).gif"
+                                                border="0"></a></td>
+                                </tr>
+                                <tr>
+                                    <td height="38" align="center" valign="top"
+                                        style="font-size: 12px;">
+                                        <script src="" type="text/javascript"></script>
+
+                                        <script src="" type="text/javascript"></script>
+
+                                        <div id="Microsoft_Live_Messenger_PresenceButton_b9f32427c8264c55"
+                                            msgr:conversationurl="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee=b9f32427c8264c55@apps.messenger.live.com&amp;mkt=en-US&amp;useTheme=true&amp;themeName=blue&amp;foreColor=333333&amp;backColor=E8F1F8&amp;linkColor=333333&amp;borderColor=AFD3EB&amp;buttonForeColor=333333&amp;buttonBackColor=EEF7FE&amp;buttonBorderColor=AFD3EB&amp;buttonDisabledColor=EEF7FE&amp;headerForeColor=0066A7&amp;headerBackColor=8EBBD8&amp;menuForeColor=333333&amp;menuBackColor=FFFFFF&amp;chatForeColor=333333&amp;chatBackColor=FFFFFF&amp;chatDisabledColor=F6F6F6&amp;chatErrorColor=760502&amp;chatLabelColor=6E6C6C"
+                                            msgr:forecolor="#424542" msgr:altbackcolor="#FFFFFF" msgr:backcolor="#77ADCF"
+                                            msgr:width="100">
+                                        </div>
+                                        <script src="" type="text/javascript"></script>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="38" align="center" valign="top"
+                                        style="font-size: 12px;"><a href="skype:Jennyfan-Codetag?call">
+                                            <img
+                                                src="gywm_files/Jennyfan-Codetag.png"
+                                                border="0">Jennyfan-Codetag</a></td>
+                                </tr>
+                                <tr>
+                                    <td height="38" align="center" valign="top"
+                                        style="font-size: 12px;"><a href="skype:abbywuchina?call">
+                                            <img src="gywm_files/abbywuchina.png"
+                                                border="0">abbywuchina</a></td>
+                                </tr>
+                                <tr>
+                                    <td height="38" align="center" valign="top"
+                                        style="font-size: 12px;"><a href="skype:wzrlsg?call">
+                                            <img src="gywm_files/wzrlsg.png"
+                                                border="0">wzrlsg</a></td>
+                                </tr>
+                                <tr>
+                                    <td align="middle">&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="down_kefu" valign="top"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="Obtn"></div>
+    </div>
+    <script language="javascript">客服果果 = function (id, _top, _left) {
+    var me = id.charAt ? document.getElementById(id) : id, d1 = document.body, d2 = document.documentElement;
+    d1.style.height = d2.style.height = '100%'; me.style.top = _top ? _top + 'px' : 0; me.style.left = _left + "px";//[(_left>0?'left':'left')]=_left?Math.abs(_left)+'px':0;
+    me.style.position = 'absolute';
+    setInterval(function () { me.style.top = parseInt(me.style.top) + (Math.max(d1.scrollTop, d2.scrollTop) + _top - parseInt(me.style.top)) * 0.1 + 'px'; }, 10 + parseInt(Math.random() * 20));
+    return arguments.callee;
+};
+        window.onload = function () {
+            客服果果
+            ('xixi', 10, -152)
+        }
+    </script>
+
+    <script language="javascript">
+        lastScrollY = 0;
+
+        var InterTime = 1;
+        var maxWidth = -1;
+        var minWidth = -152;
+        var numInter = 8;
+
+        var BigInter;
+        var SmallInter;
+
+        var o = document.getElementById("xixi");
+        var i = parseInt(o.style.left);
+        function Big() {
+            if (parseInt(o.style.left) < maxWidth) {
+                i = parseInt(o.style.left);
+                i += numInter;
+                o.style.left = i + "px";
+                if (i == maxWidth)
+                    clearInterval(BigInter);
+            }
+        }
+        function toBig() {
+            clearInterval(SmallInter);
+            clearInterval(BigInter);
+            BigInter = setInterval(Big, InterTime);
+        }
+        function Small() {
+            if (parseInt(o.style.left) > minWidth) {
+                i = parseInt(o.style.left);
+                i -= numInter;
+                o.style.left = i + "px";
+
+                if (i == minWidth)
+                    clearInterval(SmallInter);
+            }
+        }
+        function toSmall() {
+            clearInterval(SmallInter);
+            clearInterval(BigInter);
+            SmallInter = setInterval(Small, InterTime);
+
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fee72208081d38c93788fd30bc65b62bb' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</body>
+</html>

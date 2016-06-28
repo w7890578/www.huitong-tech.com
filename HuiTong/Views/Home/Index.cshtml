@@ -1,0 +1,101 @@
+﻿@model HuiTong.Controllers.HomeIndex
+@{
+    Layout = null;
+}
+@Html.Action("TopForHome", "Home")
+<div class="bannarspic">
+    <span style="line-height: 0; font-size: 0px;">
+        <img src="index_files/banner01.jpg" width="963" height="349">
+        <div id="flash_index">
+            <div id="swf80f45"></div>
+        </div>
+    </span>
+</div>
+<div class="menuline"></div>
+<div class="maintext">
+
+    @for (int i = 0; i < Model.Products.Count; i++)
+    {
+        var item = Model.Products[i];
+        <div 
+            @if (i == 0)
+            {
+                @Html.Raw("class='aboutcontent'")
+            }
+            else
+            {
+             @Html.Raw("class='aboutcontent2'")
+            }
+           >
+            <span style="text-align: center; font-weight: bold; font-size: 18px;">@item.Title</span>
+            <ul>
+                <li><a href="/Product/Detail?ID=@item.ID&ParentID=@item.ParentID">
+                    <img width="215" height="125" alt="" src="@item.ImgUrl" border="0"></a></li>
+                <li class="abouttext">
+                    @FunLayer.Str.Cut(item.Description, 64, "...")
+                </li>
+                <li style="float: right;"><a href="/Product?ParentID=@item.ParentID">
+                    <img width="63" height="8" alt="" src="index_files/cx_25.jpg" border="0"></a></li>
+            </ul>
+        </div>
+    }
+@*    @for (int i = 0; i < Model.Plans.Count; i++)
+    {
+        var item = Model.Plans[i];
+        <div class='aboutcontent2'>
+            <span style="text-align: center; font-weight: bold; font-size: 18px;">@item.Title</span>
+            <ul>
+                <li><a href="/Plan/Detail?ID=@item.ID&ParentID=@item.ParentID">
+                    <img width="215" height="125" alt="" src="@item.ImgUrl" border="0"></a></li>
+                <li class="abouttext">
+                    @FunLayer.Str.Cut(item.Description, 64, "...")
+                </li>
+                <li style="float: right;"><a href="/Plan?ParentID=@item.ParentID">
+                    <img width="63" height="8" alt="" src="index_files/cx_25.jpg" border="0"></a></li>
+            </ul>
+        </div>
+    }*@
+    <div style="clear: both;"></div>
+</div>
+ 
+<div class="catecontent" style="padding-top: 20px; padding-bottom: 20px;"><a href="/News?ParentID=7"><img width="499" height="23" alt="" src="index_files/cx_27.jpg" border="0"></a><a href="/Plan?ParentID=2"><img width="245" height="23" alt="" src="index_files/cx_28.jpg" border="0"></a><a href="/About?ParentID=6"><img width="219" height="23" alt="" src="index_files/cx_29.jpg" border="0"></a></div>
+<div class="catecontent" style="background: url(&quot;images/sb.jpg&quot;) no-repeat top; height: 263px;">
+    <ul>
+        <li class="newsli">
+            @foreach (var item in Model.News)
+            {
+                <ul style="width: 470px; height: 120px;">
+                    <li style="width: 79px; height: 79px; float: left;">
+                        <img width="70" height="70" style="padding: 3px; border: 1px solid rgb(204, 204, 204);" alt="" src="@item.ImgUrl"></li>
+                    <li style="width: 340px; margin-left: 10px; float: left;"><a style="font-weight: bold;" href="/News/Detail?ParentID=@item.ParentID&ID=@item.ID">@FunLayer.Str.Cut(item.Title, 60, "...")</a><br>
+                        @FunLayer.Str.Cut(item.Description, 150, "...")<br>
+                        <a href="/News?ParentID=@item.ParentID">
+                            <img src="index_files/gif-0334.gif" border="0"></a></li>
+                </ul> 
+
+            }
+        </li>
+        <li class="solu">
+            <ul>
+                @foreach (var item in Model.PlansTwo)
+                {
+                    <li><a   href="Plan/Detail?ID=@item.ID&ParentID=@item.ParentID">@item.Title</a>
+                    </li>
+                }
+            </ul>
+        </li>
+        <li class="qa">
+            <ul>
+                <li style="background: url(&quot;images/cx_32.jpg&quot;) no-repeat 0px; padding-left: 20px;"><a style="font-weight: bold;" href="#">售前咨询：022-6082088</a></li>
+                <li style="background: url(&quot;images/cx_32.jpg&quot;) no-repeat 0px; padding-left: 20px;"><a style="font-weight: bold;" href="#">联系电话：13752728529</a></li>
+                <li style="background: url(&quot;images/cx_32.jpg&quot;) no-repeat 0px; padding-left: 20px;"><a style="font-weight: bold;" href="#">技术支持：QQ3065251</a></li>
+                <li style="background: url(&quot;images/cx_32.jpg&quot;) no-repeat 0px; padding-left: 20px;"><a style="font-weight: bold;" href="#">邮箱：Marketing@huitong-tech.com</a></li>
+                <span id="DcmsPage_PageInfo" style="display: none;">13|26</span>
+                <li><a href="/About?ParentID=6">
+                    <img width="208" height="23" src="index_files/cx_29c.jpg" border="0"></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+@Html.Action("Foot", "Home")
